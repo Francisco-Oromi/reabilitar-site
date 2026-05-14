@@ -89,7 +89,7 @@ export default function Footer() {
                 Rua Batista de Oliveira, 1035 · Granbery · Juiz de Fora - MG
               </li>
               <li>
-                <a href="tel:3232140522" className="flex gap-2.5 text-slate-400 hover:text-white transition-colors">
+                <a href="https://wa.me/5532984772914?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20da%20Reabilitar." target="_blank" rel="noopener noreferrer" className="flex gap-2.5 text-slate-400 hover:text-white transition-colors">
                   <Phone size={15} className="text-brand-health shrink-0" />
                   (32) 3214-0522
                 </a>

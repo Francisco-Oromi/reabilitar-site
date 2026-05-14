@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const services = [
   { name: "Fisioterapia Avançada",   href: "/servicos/fisioterapia-avancada" },
@@ -42,8 +42,8 @@ export default function Header() {
           <span>📍 Rua Batista de Oliveira, 1035 · Granbery · Juiz de Fora - MG</span>
           <div className="flex items-center gap-4">
             <span>Seg–Qui: 7h–20h · Sex: 7h–19h · Sáb: 8h–12h</span>
-            <a href="tel:3232140522" className="flex items-center gap-1 hover:text-white/80 transition-colors font-medium">
-              <Phone size={12} /> (32) 3214-0522
+            <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-white/80 transition-colors font-medium">
+              <WaIcon /> WhatsApp
             </a>
           </div>
         </div>
@@ -129,9 +129,9 @@ export default function Header() {
               className="flex items-center justify-center gap-2 bg-brand-wa text-white font-bold py-3 rounded-xl w-full text-sm">
               <WaIcon /> Agendar Avaliação Gratuita
             </a>
-            <a href="tel:3232140522"
+            <a href={WA} target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-brand-primary text-white font-bold py-3 rounded-xl w-full text-sm">
-              <Phone size={16} /> (32) 3214-0522
+              <WaIcon /> Falar pelo WhatsApp
             </a>
           </div>
         </div>

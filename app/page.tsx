@@ -71,9 +71,9 @@ export default function HomePage() {
                   className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
                   <WaIcon /> Agendar Avaliação Gratuita
                 </a>
-                <a href="tel:3232140522"
+                <a href={WA} target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all">
-                  <Phone size={20} /> (32) 3214-0522
+                  <WaIcon /> Falar pelo WhatsApp
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-white/75">
@@ -199,7 +199,7 @@ export default function HomePage() {
                 <div className="space-y-3 text-sm">
                   <div className="flex items-start gap-3"><MapPin size={18} className="text-brand-star shrink-0 mt-0.5" /><span>Rua Batista de Oliveira, 1035 · Granbery · Juiz de Fora</span></div>
                   <div className="flex items-center gap-3"><Clock size={18} className="text-brand-star shrink-0" /><span>Seg–Qui: 7h–20h · Sex: 7h–19h · Sáb: 8h–12h</span></div>
-                  <div className="flex items-center gap-3"><Phone size={18} className="text-brand-star shrink-0" /><a href="tel:3232140522" className="hover:text-white/80">(32) 3214-0522</a></div>
+                  <div className="flex items-center gap-3"><Phone size={18} className="text-brand-star shrink-0" /><a href={WA} target="_blank" rel="noopener noreferrer" className="hover:text-white/80">(32) 3214-0522</a></div>
                 </div>
               </div>
               <div className="space-y-3">
@@ -207,9 +207,9 @@ export default function HomePage() {
                   className="flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark font-bold py-4 rounded-xl transition-all w-full">
                   <WaIcon /> Falar pelo WhatsApp
                 </a>
-                <a href="tel:3232140522"
+                <a href={WA} target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 font-bold py-4 rounded-xl transition-all w-full">
-                  📞 Ligar: (32) 3214-0522
+                  <WaIcon /> Falar pelo WhatsApp
                 </a>
               </div>
             </div>
@@ -269,9 +269,9 @@ export default function HomePage() {
               className="flex items-center gap-2 bg-white text-brand-cta font-bold px-8 py-4 rounded-xl hover:bg-white/90 transition-all shadow-lg">
               <WaIcon /> Agendar pelo WhatsApp
             </a>
-            <a href="tel:3232140522"
+            <a href={WA} target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 font-bold px-8 py-4 rounded-xl transition-all">
-              📞 (32) 3214-0522
+              <WaIcon /> Falar pelo WhatsApp
             </a>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import FAQSection from "@/components/FAQSection";
 import ClinicGallery from "@/components/ClinicGallery";
-import { CheckCircle, Star, Phone, RotateCcw, Shield, Activity, Zap, ArrowRight, MapPin } from "lucide-react";
+import { CheckCircle, Star, RotateCcw, Shield, Activity, Zap, ArrowRight, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Quiropraxia em Juiz de Fora | Alívio da Dor na Coluna",
@@ -81,8 +81,8 @@ export default function QuiropraxiaPage() {
               <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-all shadow-lg hover:-translate-y-0.5">
                 <WaIcon /> Agendar Sessão
               </a>
-              <a href="tel:3232140522" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all">
-                <Phone size={20} /> (32) 3214-0522
+              <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all">
+                <WaIcon /> Falar pelo WhatsApp
               </a>
             </div>
             <div className="flex flex-wrap gap-5 text-sm text-white/80">
@@ -165,7 +165,7 @@ export default function QuiropraxiaPage() {
           <p className="text-white/85 mb-6">Agende sua avaliação e descubra se a quiropraxia é indicada para o seu caso.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark font-bold px-8 py-4 rounded-xl transition-all shadow-lg"><WaIcon /> Agendar pelo WhatsApp</a>
-            <a href="tel:3232140522" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 font-bold px-8 py-4 rounded-xl transition-all">📞 (32) 3214-0522</a>
+            <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 font-bold px-8 py-4 rounded-xl transition-all"><WaIcon /> Falar pelo WhatsApp</a>
           </div>
         </div>
       </section>
@@ -228,7 +228,7 @@ export default function QuiropraxiaPage() {
           <p className="text-white/85 text-lg mb-8">Nossos quiropraxistas estão prontos para devolver sua qualidade de vida.</p>
           <div className="flex flex-wrap justify-center gap-4 mb-6">
             <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark font-bold px-10 py-4 rounded-xl transition-all shadow-lg text-lg"><WaIcon /> Agendar Avaliação Gratuita</a>
-            <a href="tel:3232140522" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/40 font-bold px-8 py-4 rounded-xl transition-all text-lg">📞 Ligar Agora</a>
+            <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/40 font-bold px-8 py-4 rounded-xl transition-all text-lg"><WaIcon /> Falar pelo WhatsApp</a>
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-white/70">
             <span><MapPin size={13} className="inline mr-1" />Rua Batista de Oliveira, 1035 · JF</span>

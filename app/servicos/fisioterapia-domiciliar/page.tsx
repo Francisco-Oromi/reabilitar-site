@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import FAQSection from "@/components/FAQSection";
 import ClinicGallery from "@/components/ClinicGallery";
-import { CheckCircle, Star, Phone, Home, Clock, Heart, Shield, Smile, ArrowRight, MapPin } from "lucide-react";
+import { CheckCircle, Star, Home, Clock, Heart, Shield, Smile, ArrowRight, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Fisioterapia Domiciliar em Juiz de Fora | Atendimento em Casa",
@@ -85,8 +85,8 @@ export default function FisioterapiaDomiciliarPage() {
               <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-all shadow-lg hover:-translate-y-0.5">
                 <WaIcon /> Solicitar Atendimento em Casa
               </a>
-              <a href="tel:3232140522" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all">
-                <Phone size={20} /> (32) 3214-0522
+              <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all">
+                <WaIcon /> Falar pelo WhatsApp
               </a>
             </div>
             <div className="flex flex-wrap gap-5 text-sm text-white/80">
@@ -175,8 +175,8 @@ export default function FisioterapiaDomiciliarPage() {
             <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark font-bold px-8 py-4 rounded-xl transition-all shadow-lg">
               <WaIcon /> Solicitar pelo WhatsApp
             </a>
-            <a href="tel:3232140522" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 font-bold px-8 py-4 rounded-xl transition-all">
-              📞 (32) 3214-0522
+            <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 font-bold px-8 py-4 rounded-xl transition-all">
+              <WaIcon /> Falar pelo WhatsApp
             </a>
           </div>
         </div>
@@ -246,8 +246,8 @@ export default function FisioterapiaDomiciliarPage() {
             <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark font-bold px-10 py-4 rounded-xl transition-all shadow-lg text-lg">
               <WaIcon /> Agendar Atendimento em Casa
             </a>
-            <a href="tel:3232140522" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/40 font-bold px-8 py-4 rounded-xl transition-all text-lg">
-              📞 Ligar Agora
+            <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/40 font-bold px-8 py-4 rounded-xl transition-all text-lg">
+              <WaIcon /> Falar pelo WhatsApp
             </a>
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-white/70">

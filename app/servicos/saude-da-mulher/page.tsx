@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
 import ClinicGallery from "@/components/ClinicGallery";
-import { Heart, Shield, Star, CheckCircle, ArrowRight, Phone } from "lucide-react";
+import { Heart, Shield, Star, CheckCircle, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Fisioterapia para Saúde da Mulher em Juiz de Fora | Reabilitar",
@@ -241,10 +241,10 @@ export default function SaudeDaMulherPage() {
                   <WaIcon />
                   Agendar Avaliação Gratuita
                 </a>
-                <a href="tel:+5532984772914"
+                <a href={WA} target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/20 font-semibold text-lg px-8 py-4 rounded-full transition-all">
-                  <Phone className="w-5 h-5" />
-                  (32) 98477-2914
+                  <WaIcon />
+                  Falar pelo WhatsApp
                 </a>
               </div>
               <div className="flex flex-wrap gap-4 text-sm text-pink-100">

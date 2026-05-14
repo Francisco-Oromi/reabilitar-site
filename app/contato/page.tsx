@@ -72,7 +72,9 @@ export default function ContatoPage() {
                   <div>
                     <p className="font-semibold text-gray-900">Telefone / WhatsApp</p>
                     <a
-                      href="tel:+5532984772914"
+                      href="https://wa.me/5532984772914?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Reabilitar."
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-brand-primary font-medium text-sm hover:underline"
                     >
                       (32) 98477-2914
