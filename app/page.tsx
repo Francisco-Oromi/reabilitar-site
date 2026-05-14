@@ -20,14 +20,14 @@ const WaIcon = () => (
 );
 
 const services = [
-  { icon: Activity,   name: "Fisioterapia Avançada",   desc: "Técnicas manuais avançadas para recuperação e alívio da dor.", href: "/servicos/fisioterapia-avancada",   color: "bg-blue-50 text-blue-700" },
-  { icon: Home,       name: "Fisioterapia Domiciliar", desc: "Tratamento especializado no conforto da sua casa.",             href: "/servicos/fisioterapia-domiciliar", color: "bg-emerald-50 text-emerald-700" },
-  { icon: Zap,        name: "Liberação Miofascial",    desc: "Alívio de pontos gatilho e melhora da mobilidade muscular.",   href: "/servicos/liberacao-miofascial",    color: "bg-yellow-50 text-yellow-700" },
-  { icon: Heart,      name: "Osteopatia",              desc: "Tratamento holístico para disfunções musculoesqueléticas.",     href: "/servicos/osteopatia",              color: "bg-red-50 text-red-700" },
-  { icon: Dumbbell,   name: "Pilates",                 desc: "Método integrado para força, postura e qualidade de vida.",    href: "/servicos/pilates",                 color: "bg-purple-50 text-purple-700" },
-  { icon: RotateCcw,  name: "Quiropraxia",             desc: "Ajuste vertebral para aliviar dores e restaurar a postura.",   href: "/servicos/quiropraxia",             color: "bg-orange-50 text-orange-700" },
-  { icon: LayoutGrid, name: "RPG",                     desc: "Reeducação Postural Global para corrigir sua coluna.",         href: "/servicos/rpg",                     color: "bg-teal-50 text-teal-700" },
-  { icon: Users,      name: "Saúde da Mulher",         desc: "Fisioterapia pélvica especializada em todas as fases da vida.",href: "/servicos/saude-da-mulher",         color: "bg-pink-50 text-pink-700" },
+  { icon: Activity,   name: "Fisioterapia Avançada",   desc: "Técnicas manuais avançadas para recuperação e alívio da dor.", href: "/servicos/fisioterapia-avancada",   img: "/images/cover-fisioterapia-avancada.jpg" },
+  { icon: Home,       name: "Fisioterapia Domiciliar", desc: "Tratamento especializado no conforto da sua casa.",             href: "/servicos/fisioterapia-domiciliar", img: "/images/cover-fisioterapia-domiciliar.jpg" },
+  { icon: Zap,        name: "Liberação Miofascial",    desc: "Alívio de pontos gatilho e melhora da mobilidade muscular.",   href: "/servicos/liberacao-miofascial",    img: "/images/cover-liberacao-miofascial.jpg" },
+  { icon: Heart,      name: "Osteopatia",              desc: "Tratamento holístico para disfunções musculoesqueléticas.",     href: "/servicos/osteopatia",              img: "/images/cover-osteopatia.jpg" },
+  { icon: Dumbbell,   name: "Pilates",                 desc: "Método integrado para força, postura e qualidade de vida.",    href: "/servicos/pilates",                 img: "/images/cover-pilates.jpg" },
+  { icon: RotateCcw,  name: "Quiropraxia",             desc: "Ajuste vertebral para aliviar dores e restaurar a postura.",   href: "/servicos/quiropraxia",             img: "/images/cover-quiropraxia.jpg" },
+  { icon: LayoutGrid, name: "RPG",                     desc: "Reeducação Postural Global para corrigir sua coluna.",         href: "/servicos/rpg",                     img: "/images/cover-rpg.jpg" },
+  { icon: Users,      name: "Saúde da Mulher",         desc: "Fisioterapia pélvica especializada em todas as fases da vida.",href: "/servicos/saude-da-mulher",         img: "/images/cover-saude-da-mulher.jpg" },
 ];
 
 const whyUs = [
@@ -47,40 +47,53 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="bg-gradient-to-br from-brand-primary to-brand-primary-dark text-white py-24 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-brand-primary to-brand-primary-dark text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-16 left-8 w-72 h-72 bg-white rounded-full blur-3xl" />
-          <div className="absolute bottom-8 right-8 w-96 h-96 bg-brand-health rounded-full blur-3xl" />
+          <div className="absolute bottom-8 right-8 w-96 h-96 bg-white rounded-full blur-3xl" />
         </div>
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium mb-6">
-              <Star size={14} className="text-brand-star fill-brand-star" />
-              4.9 no Google · Mais de 500 avaliações
+          <div className="grid lg:grid-cols-2 gap-8 items-center py-16 md:py-20">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium mb-6">
+                <Star size={14} className="text-brand-star fill-brand-star" />
+                4.9 no Google · Mais de 500 avaliações
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight mb-6">
+                Fisioterapia de Excelência em{" "}
+                <span className="text-brand-star">Juiz de Fora</span>
+              </h1>
+              <p className="text-xl text-white/85 mb-10 max-w-2xl leading-relaxed">
+                Há mais de 15 anos devolvendo qualidade de vida através de tratamentos personalizados e técnicas avançadas. Avaliação gratuita para novos pacientes.
+              </p>
+              <div className="flex flex-wrap gap-4 mb-10">
+                <a href={WA} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                  <WaIcon /> Agendar Avaliação Gratuita
+                </a>
+                <a href="tel:3232140522"
+                  className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all">
+                  <Phone size={20} /> (32) 3214-0522
+                </a>
+              </div>
+              <div className="flex flex-wrap gap-6 text-sm text-white/75">
+                {["Mais de 15 anos de experiência", "+ 5.000 pacientes atendidos", "15+ fisioterapeutas especializados"].map((t) => (
+                  <span key={t} className="flex items-center gap-1.5">
+                    <CheckCircle size={15} className="text-white" /> {t}
+                  </span>
+                ))}
+              </div>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight mb-6">
-              Fisioterapia de Excelência em{" "}
-              <span className="text-brand-star">Juiz de Fora</span>
-            </h1>
-            <p className="text-xl text-white/85 mb-10 max-w-2xl leading-relaxed">
-              Há mais de 15 anos devolvendo qualidade de vida através de tratamentos personalizados e técnicas avançadas. Avaliação gratuita para novos pacientes.
-            </p>
-            <div className="flex flex-wrap gap-4 mb-10">
-              <a href={WA} target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-                <WaIcon /> Agendar Avaliação Gratuita
-              </a>
-              <a href="tel:3232140522"
-                className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all">
-                <Phone size={20} /> (32) 3214-0522
-              </a>
-            </div>
-            <div className="flex flex-wrap gap-6 text-sm text-white/75">
-              {["Mais de 15 anos de experiência", "+ 5.000 pacientes atendidos", "15+ fisioterapeutas especializados"].map((t) => (
-                <span key={t} className="flex items-center gap-1.5">
-                  <CheckCircle size={15} className="text-brand-health" /> {t}
-                </span>
-              ))}
+            <div className="hidden lg:block relative">
+              <img
+                src="/images/clinica-01.webp"
+                alt="Fisioterapia Reabilitar Wellness – Juiz de Fora"
+                className="rounded-2xl shadow-2xl w-full object-cover h-[480px]"
+              />
+              <div className="absolute -bottom-4 -left-4 bg-white text-brand-primary rounded-2xl p-4 shadow-xl">
+                <div className="text-3xl font-bold font-heading">4.9 ★</div>
+                <div className="text-slate-500 text-xs">+500 avaliações Google</div>
+              </div>
             </div>
           </div>
         </div>
@@ -119,15 +132,25 @@ export default function HomePage() {
               const Icon = s.icon;
               return (
                 <Link key={s.href} href={s.href}
-                  className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all group hover:-translate-y-1 border border-slate-100">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${s.color}`}>
-                    <Icon size={22} />
+                  className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all group hover:-translate-y-1 border border-slate-100">
+                  <div className="h-44 overflow-hidden relative">
+                    <img
+                      src={s.img}
+                      alt={s.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    <div className="absolute bottom-3 left-3 w-9 h-9 bg-brand-primary rounded-lg flex items-center justify-center text-white shadow">
+                      <Icon size={18} />
+                    </div>
                   </div>
-                  <h3 className="font-bold text-brand-dark font-heading mb-2 group-hover:text-brand-primary transition-colors">{s.name}</h3>
-                  <p className="text-sm text-slate-500 leading-relaxed mb-4">{s.desc}</p>
-                  <span className="text-brand-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Saiba mais <ArrowRight size={14} />
-                  </span>
+                  <div className="p-5">
+                    <h3 className="font-bold text-brand-dark font-heading mb-1.5 group-hover:text-brand-primary transition-colors">{s.name}</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed mb-4">{s.desc}</p>
+                    <span className="text-brand-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                      Saiba mais <ArrowRight size={14} />
+                    </span>
+                  </div>
                 </Link>
               );
             })}
@@ -138,7 +161,7 @@ export default function HomePage() {
       {/* WHY US */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-12">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-brand-dark font-heading mb-6">
                 Por que escolher a <span className="text-brand-primary">Reabilitar Wellness?</span>
@@ -160,13 +183,24 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            <div className="bg-gradient-to-br from-brand-primary to-brand-primary-dark rounded-3xl p-8 text-white shadow-xl">
-              <h3 className="text-2xl font-bold font-heading mb-2">Agende sua avaliação gratuita</h3>
-              <p className="text-white/75 text-sm mb-6">Sem compromisso. Nossa equipe entra em contato rapidamente.</p>
-              <div className="space-y-3 mb-7 text-sm">
-                <div className="flex items-start gap-3"><MapPin size={18} className="text-brand-star shrink-0 mt-0.5" /><span>Rua Batista de Oliveira, 1035 · Granbery · Juiz de Fora</span></div>
-                <div className="flex items-center gap-3"><Clock size={18} className="text-brand-star shrink-0" /><span>Seg–Qui: 7h–20h · Sex: 7h–19h · Sáb: 8h–12h</span></div>
-                <div className="flex items-center gap-3"><Phone size={18} className="text-brand-star shrink-0" /><a href="tel:3232140522" className="hover:text-white/80">(32) 3214-0522</a></div>
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <img src="/images/clinica-02.webp" alt="Clínica Reabilitar Juiz de Fora" className="rounded-2xl h-48 w-full object-cover shadow-md" />
+                <img src="/images/clinica-03.webp" alt="Fisioterapia Reabilitar JF" className="rounded-2xl h-48 w-full object-cover shadow-md" />
+              </div>
+              <img src="/images/clinica-04.webp" alt="Consultório fisioterapia Juiz de Fora" className="rounded-2xl h-44 w-full object-cover shadow-md" />
+            </div>
+          </div>
+          <div className="bg-gradient-to-br from-brand-primary to-brand-primary-dark rounded-3xl p-8 md:p-10 text-white shadow-xl">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-bold font-heading mb-2">Agende sua avaliação gratuita</h3>
+                <p className="text-white/75 text-sm mb-6">Sem compromisso. Nossa equipe entra em contato rapidamente.</p>
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-start gap-3"><MapPin size={18} className="text-brand-star shrink-0 mt-0.5" /><span>Rua Batista de Oliveira, 1035 · Granbery · Juiz de Fora</span></div>
+                  <div className="flex items-center gap-3"><Clock size={18} className="text-brand-star shrink-0" /><span>Seg–Qui: 7h–20h · Sex: 7h–19h · Sáb: 8h–12h</span></div>
+                  <div className="flex items-center gap-3"><Phone size={18} className="text-brand-star shrink-0" /><a href="tel:3232140522" className="hover:text-white/80">(32) 3214-0522</a></div>
+                </div>
               </div>
               <div className="space-y-3">
                 <a href={WA} target="_blank" rel="noopener noreferrer"

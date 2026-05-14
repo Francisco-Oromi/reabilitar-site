@@ -76,31 +76,37 @@ export default function FisioterapiaAvancadaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* HERO */}
-      <section className="bg-gradient-to-br from-brand-primary to-brand-primary-dark text-white py-20">
+      <section className="bg-gradient-to-br from-brand-primary to-brand-primary-dark text-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
-              <Star size={14} className="text-brand-star fill-brand-star" /> 4.9 no Google · Clínica desde 2007
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
+                <Star size={14} className="text-brand-star fill-brand-star" /> 4.9 no Google · Clínica desde 2007
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold font-heading leading-tight mb-5">
+                Fisioterapia Avançada em Juiz de Fora
+              </h1>
+              <p className="text-xl text-white/85 mb-8 leading-relaxed">
+                Tratamento manual e individualizado para eliminar sua dor e recuperar sua qualidade de vida. Mais de 15 fisioterapeutas especializados prontos para te ajudar.
+              </p>
+              <div className="flex flex-wrap gap-4 mb-8">
+                <a href={WA} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-all shadow-lg hover:-translate-y-0.5">
+                  <WaIcon /> Agendar Avaliação Gratuita
+                </a>
+                <a href="tel:3232140522" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all">
+                  <Phone size={20} /> (32) 3214-0522
+                </a>
+              </div>
+              <div className="flex flex-wrap gap-5 text-sm text-white/80">
+                {["Avaliação gratuita", "Sem lista de espera", "Atende convênios"].map((t) => (
+                  <span key={t} className="flex items-center gap-1.5"><CheckCircle size={14} className="text-white" /> {t}</span>
+                ))}
+              </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold font-heading leading-tight mb-5">
-              Fisioterapia Avançada em Juiz de Fora
-            </h1>
-            <p className="text-xl text-white/85 mb-8 leading-relaxed">
-              Tratamento manual e individualizado para eliminar sua dor e recuperar sua qualidade de vida. Mais de 15 fisioterapeutas especializados prontos para te ajudar.
-            </p>
-            <div className="flex flex-wrap gap-4 mb-8">
-              <a href={WA} target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-all shadow-lg hover:-translate-y-0.5">
-                <WaIcon /> Agendar Avaliação Gratuita
-              </a>
-              <a href="tel:3232140522" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all">
-                <Phone size={20} /> (32) 3214-0522
-              </a>
-            </div>
-            <div className="flex flex-wrap gap-5 text-sm text-white/80">
-              {["Avaliação gratuita", "Sem lista de espera", "Atende convênios"].map((t) => (
-                <span key={t} className="flex items-center gap-1.5"><CheckCircle size={14} className="text-brand-health" /> {t}</span>
-              ))}
+            <div className="hidden lg:block">
+              <img src="/images/cover-fisioterapia-avancada.jpg" alt="Fisioterapia Avançada em Juiz de Fora – Reabilitar Wellness"
+                className="rounded-2xl shadow-2xl w-full object-cover h-[420px]" />
             </div>
           </div>
         </div>

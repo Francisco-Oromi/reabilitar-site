@@ -65,9 +65,10 @@ export default function RPGPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section className="bg-gradient-to-br from-teal-700 to-teal-900 text-white py-20">
+      <section className="bg-gradient-to-br from-teal-700 to-teal-900 text-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="max-w-3xl">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
             <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
               <Star size={14} className="text-brand-star fill-brand-star" /> Método Philippe Souchard · Desde 2007
             </div>
@@ -87,6 +88,11 @@ export default function RPGPage() {
               {["Avaliação gratuita", "Resultados duradouros", "Para todas as idades"].map((t) => (
                 <span key={t} className="flex items-center gap-1.5"><CheckCircle size={14} className="text-teal-300" /> {t}</span>
               ))}
+            </div>
+            </div>
+            <div className="hidden lg:block">
+              <img src="/images/cover-rpg.jpg" alt="RPG Reeducação Postural Global em Juiz de Fora – Reabilitar Wellness"
+                className="rounded-2xl shadow-2xl w-full object-cover h-[420px]" />
             </div>
           </div>
         </div>

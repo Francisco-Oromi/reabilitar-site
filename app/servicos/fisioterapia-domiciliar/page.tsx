@@ -67,9 +67,10 @@ export default function FisioterapiaDomiciliarPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* HERO */}
-      <section className="bg-gradient-to-br from-emerald-700 to-emerald-900 text-white py-20">
+      <section className="bg-gradient-to-br from-emerald-700 to-emerald-900 text-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="max-w-3xl">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
             <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
               <Star size={14} className="text-brand-star fill-brand-star" /> Atendimento no seu lar · Juiz de Fora
             </div>
@@ -91,6 +92,11 @@ export default function FisioterapiaDomiciliarPage() {
               {["Avaliação no domicílio", "Equipe equipada", "Toda Juiz de Fora"].map((t) => (
                 <span key={t} className="flex items-center gap-1.5"><CheckCircle size={14} className="text-emerald-300" /> {t}</span>
               ))}
+            </div>
+            </div>
+            <div className="hidden lg:block">
+              <img src="/images/cover-fisioterapia-domiciliar.jpg" alt="Fisioterapia Domiciliar em Juiz de Fora – Reabilitar Wellness"
+                className="rounded-2xl shadow-2xl w-full object-cover h-[420px]" />
             </div>
           </div>
         </div>

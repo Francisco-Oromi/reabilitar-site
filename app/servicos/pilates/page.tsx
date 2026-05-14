@@ -72,9 +72,10 @@ export default function PilatesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section className="bg-gradient-to-br from-purple-700 to-purple-900 text-white py-20">
+      <section className="bg-gradient-to-br from-purple-700 to-purple-900 text-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="max-w-3xl">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
             <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
               <Star size={14} className="text-brand-star fill-brand-star" /> Método Integrado Exclusivo · JF
             </div>
@@ -96,6 +97,11 @@ export default function PilatesPage() {
               {["Avaliação postural gratuita", "Todos os níveis", "Turmas reduzidas"].map((t) => (
                 <span key={t} className="flex items-center gap-1.5"><CheckCircle size={14} className="text-purple-300" /> {t}</span>
               ))}
+            </div>
+            </div>
+            <div className="hidden lg:block">
+              <img src="/images/cover-pilates.jpg" alt="Pilates em Juiz de Fora – Reabilitar Wellness"
+                className="rounded-2xl shadow-2xl w-full object-cover h-[420px]" />
             </div>
           </div>
         </div>

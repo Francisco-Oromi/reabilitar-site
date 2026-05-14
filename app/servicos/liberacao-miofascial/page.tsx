@@ -66,9 +66,10 @@ export default function LiberacaoMiofascialPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* HERO */}
-      <section className="bg-gradient-to-br from-yellow-600 to-yellow-800 text-white py-20">
+      <section className="bg-gradient-to-br from-yellow-600 to-yellow-800 text-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="max-w-3xl">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
             <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
               <Star size={14} className="text-brand-star fill-brand-star" /> Técnica avançada · Resultados rápidos
             </div>
@@ -90,6 +91,11 @@ export default function LiberacaoMiofascialPage() {
               {["Avaliação gratuita", "Alívio já na 1ª sessão", "Para atletas e não-atletas"].map((t) => (
                 <span key={t} className="flex items-center gap-1.5"><CheckCircle size={14} className="text-yellow-300" /> {t}</span>
               ))}
+            </div>
+            </div>
+            <div className="hidden lg:block">
+              <img src="/images/cover-liberacao-miofascial.jpg" alt="Liberação Miofascial em Juiz de Fora – Reabilitar Wellness"
+                className="rounded-2xl shadow-2xl w-full object-cover h-[420px]" />
             </div>
           </div>
         </div>

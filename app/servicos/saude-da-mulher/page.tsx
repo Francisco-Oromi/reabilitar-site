@@ -213,48 +213,50 @@ export default function SaudeDaMulherPage() {
       />
 
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-pink-700 via-rose-600 to-pink-500 text-white py-20 md:py-28 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-pink-700 via-rose-600 to-pink-500 text-white py-16 md:py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl" />
         </div>
-        <div className="relative max-w-6xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-6">
-            <Heart className="w-4 h-4" />
-            Especialidade em Fisioterapia Pélvica Feminina
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6 leading-tight">
-            Fisioterapia para{" "}
-            <span className="text-pink-200">Saúde da Mulher</span>{" "}
-            em Juiz de Fora
-          </h1>
-          <p className="text-lg md:text-xl text-pink-100 max-w-3xl mx-auto mb-8">
-            Tratamento especializado do assoalho pélvico para incontinência urinária, pós-parto,
-            gestação, menopausa, vaginismo e dor pélvica. Ambiente exclusivo, acolhedor e sigiloso.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={WA}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-white text-pink-700 hover:bg-pink-50 font-bold text-lg px-8 py-4 rounded-full shadow-xl transition-all hover:scale-105"
-            >
-              <WaIcon />
-              Agendar Avaliação Gratuita
-            </a>
-            <a
-              href="tel:+5532984772914"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/20 font-semibold text-lg px-8 py-4 rounded-full transition-all"
-            >
-              <Phone className="w-5 h-5" />
-              (32) 98477-2914
-            </a>
-          </div>
-          <div className="flex flex-wrap justify-center gap-6 mt-10 text-sm text-pink-100">
-            <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4" /> Ambiente 100% feminino</span>
-            <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4" /> Avaliação inicial gratuita</span>
-            <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4" /> Total sigilo e privacidade</span>
-            <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4" /> Especialistas certificadas</span>
+        <div className="relative max-w-7xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-6">
+                <Heart className="w-4 h-4" />
+                Especialidade em Fisioterapia Pélvica Feminina
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 leading-tight">
+                Fisioterapia para{" "}
+                <span className="text-pink-200">Saúde da Mulher</span>{" "}
+                em Juiz de Fora
+              </h1>
+              <p className="text-lg md:text-xl text-pink-100 mb-8">
+                Tratamento especializado do assoalho pélvico para incontinência urinária, pós-parto,
+                gestação, menopausa, vaginismo e dor pélvica. Ambiente exclusivo, acolhedor e sigiloso.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <a href={WA} target="_blank" rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-pink-700 hover:bg-pink-50 font-bold text-lg px-8 py-4 rounded-full shadow-xl transition-all hover:scale-105">
+                  <WaIcon />
+                  Agendar Avaliação Gratuita
+                </a>
+                <a href="tel:+5532984772914"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/20 font-semibold text-lg px-8 py-4 rounded-full transition-all">
+                  <Phone className="w-5 h-5" />
+                  (32) 98477-2914
+                </a>
+              </div>
+              <div className="flex flex-wrap gap-4 text-sm text-pink-100">
+                <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4" /> Ambiente 100% feminino</span>
+                <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4" /> Avaliação inicial gratuita</span>
+                <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4" /> Total sigilo e privacidade</span>
+                <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4" /> Especialistas certificadas</span>
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <img src="/images/cover-saude-da-mulher.jpg" alt="Fisioterapia Saúde da Mulher em Juiz de Fora – Reabilitar Wellness"
+                className="rounded-2xl shadow-2xl w-full object-cover h-[420px]" />
+            </div>
           </div>
         </div>
       </section>

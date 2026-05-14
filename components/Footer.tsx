@@ -30,12 +30,8 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2.5 mb-5">
-              <div className="w-10 h-10 rounded-lg bg-brand-primary flex items-center justify-center text-white font-bold text-xl font-heading">R</div>
-              <div>
-                <div className="text-xl font-bold text-white font-heading leading-none">Reabilitar</div>
-                <div className="text-xs text-slate-400 leading-none mt-0.5">Wellness</div>
-              </div>
+            <div className="mb-5">
+              <img src="/images/logo-footer.png" alt="Reabilitar Wellness" className="h-14 w-auto brightness-0 invert" />
             </div>
             <p className="text-sm leading-relaxed text-slate-400 mb-5">
               Cuidando da sua saúde com excelência desde 2007. Tratamentos personalizados para uma vida com mais qualidade e bem-estar em Juiz de Fora.
@@ -121,9 +117,17 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} Reabilitar Wellness. Todos os direitos reservados.</p>
-          <p>Fisioterapia em Juiz de Fora — Granbery, MG</p>
+        <div className="max-w-7xl mx-auto px-4 py-6">
+          <p className="text-xs text-slate-500 text-center mb-4">Convênios e parcerias aceitos</p>
+          <div className="flex flex-wrap justify-center items-center gap-6 mb-6">
+            <img src="/images/convenio1.png" alt="Convênio 1" className="h-8 w-auto opacity-50 hover:opacity-80 transition-opacity" />
+            <img src="/images/convenio2.png" alt="Convênio 2" className="h-8 w-auto opacity-50 hover:opacity-80 transition-opacity" />
+            <img src="/images/convenio3.png" alt="Convênio 3" className="h-8 w-auto opacity-50 hover:opacity-80 transition-opacity" />
+          </div>
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-500">
+            <p>© {new Date().getFullYear()} Reabilitar Wellness. Todos os direitos reservados.</p>
+            <p>Fisioterapia em Juiz de Fora — Granbery, MG</p>
+          </div>
         </div>
       </div>
     </footer>

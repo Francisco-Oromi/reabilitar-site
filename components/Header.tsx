@@ -53,12 +53,8 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-lg bg-brand-primary flex items-center justify-center text-white font-bold text-lg font-heading">R</div>
-            <div className="leading-tight">
-              <div className="text-lg font-bold text-brand-primary font-heading leading-none">Reabilitar</div>
-              <div className="text-[11px] text-slate-500 leading-none">Wellness</div>
-            </div>
+          <Link href="/">
+            <img src="/images/logo.png" alt="Reabilitar Wellness – Fisioterapia em Juiz de Fora" className="h-12 w-auto" />
           </Link>
 
           {/* Desktop nav */}
