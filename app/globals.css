@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a202c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme {
+  --color-brand-primary: #1b4fa0;
+  --color-brand-primary-dark: #0f3579;
+  --color-brand-primary-light: #dbeafe;
+  --color-brand-health: #00a86b;
+  --color-brand-health-dark: #007a4d;
+  --color-brand-cta: #f2711c;
+  --color-brand-cta-dark: #d45d0e;
+  --color-brand-wa: #25d366;
+  --color-brand-wa-dark: #1da851;
+  --color-brand-star: #f5b800;
+  --color-brand-dark: #1a202c;
+  --color-brand-mid: #4a5568;
+  --color-brand-light: #718096;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+@keyframes wa-pulse {
+  0%   { box-shadow: 0 0 0 0   rgba(37, 211, 102, 0.6); }
+  70%  { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);   }
+  100% { box-shadow: 0 0 0 0   rgba(37, 211, 102, 0);   }
+}
+
+.wa-pulse {
+  animation: wa-pulse 2.5s ease-in-out infinite;
+}
