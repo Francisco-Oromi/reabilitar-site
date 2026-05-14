@@ -8,7 +8,7 @@ export default function WhatsAppFloat() {
       href={WA}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-brand-wa rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform wa-pulse"
+      className="hidden md:flex fixed bottom-6 right-6 z-50 w-14 h-14 bg-brand-wa rounded-full items-center justify-center shadow-2xl hover:scale-110 transition-transform wa-pulse"
       aria-label="Fale conosco no WhatsApp"
     >
       <svg className="w-7 h-7 fill-white" viewBox="0 0 24 24">

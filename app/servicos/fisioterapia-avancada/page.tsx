@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import FAQSection from "@/components/FAQSection";
+import ClinicGallery from "@/components/ClinicGallery";
 import { CheckCircle, Star, Phone, Activity, Clock, Award, MapPin, ArrowRight, Shield, Users, Target, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -169,6 +170,12 @@ export default function FisioterapiaAvancadaPage() {
               </div>
             ))}
           </div>
+          <div className="text-center mt-10">
+            <a href={WA} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold px-8 py-3.5 rounded-xl transition-all shadow-md">
+              <WaIcon /> Quero esse tratamento
+            </a>
+          </div>
         </div>
       </section>
 
@@ -220,6 +227,21 @@ export default function FisioterapiaAvancadaPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <ClinicGallery />
+
+      <section className="py-12 bg-brand-primary-light">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <p className="text-brand-primary font-semibold text-sm uppercase tracking-widest mb-2">Dê o primeiro passo</p>
+          <h2 className="text-2xl md:text-3xl font-bold font-heading text-brand-dark mb-6">
+            Junte-se a mais de 5.000 pacientes que recuperaram sua saúde
+          </h2>
+          <a href={WA} target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-10 py-4 rounded-xl transition-all shadow-lg text-lg">
+            <WaIcon /> Agendar Avaliação Gratuita
+          </a>
         </div>
       </section>
 

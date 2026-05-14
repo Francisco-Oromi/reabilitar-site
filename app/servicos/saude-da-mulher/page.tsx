@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FAQSection from "@/components/FAQSection";
+import ClinicGallery from "@/components/ClinicGallery";
 import { Heart, Shield, Star, CheckCircle, ArrowRight, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -353,6 +354,12 @@ export default function SaudeDaMulherPage() {
               </div>
             ))}
           </div>
+          <div className="text-center mt-10">
+            <a href={WA} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-all shadow-md">
+              <WaIcon /> Quero esse tratamento
+            </a>
+          </div>
         </div>
       </section>
 
@@ -497,6 +504,21 @@ export default function SaudeDaMulherPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <ClinicGallery />
+
+      <section className="py-12 bg-pink-50">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <p className="text-pink-600 font-semibold text-sm uppercase tracking-widest mb-2">Dê o primeiro passo</p>
+          <h2 className="text-2xl md:text-3xl font-bold font-heading text-gray-900 mb-6">
+            Junte-se a mais de 500 mulheres que recuperaram sua qualidade de vida
+          </h2>
+          <a href={WA} target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-10 py-4 rounded-xl transition-all shadow-lg text-lg">
+            <WaIcon /> Agendar Avaliação Gratuita
+          </a>
         </div>
       </section>
 
