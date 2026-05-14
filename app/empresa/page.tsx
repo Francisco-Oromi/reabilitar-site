@@ -116,7 +116,7 @@ export default function EmpresaPage() {
             { n: "15+", label: "Anos de experiência" },
             { n: "5.000+", label: "Pacientes atendidos" },
             { n: "15+", label: "Especialistas" },
-            { n: "4.9★", label: "Avaliação no Google" },
+            { n: "5★", label: "Avaliação no Google" },
           ].map((s) => (
             <div key={s.label}>
               <div className="text-3xl font-bold font-heading">{s.n}</div>
@@ -265,7 +265,7 @@ export default function EmpresaPage() {
               "Sala exclusiva para atendimento da saúde da mulher",
               "Prontuário eletrônico e comunicação digital facilitada",
               "Flexibilidade de horários incluindo sábados",
-              "Atendimento a planos de saúde e convênios empresariais",
+              "Atendimento 100% particular com foco em qualidade e resultado",
               "Fisioterapia domiciliar para toda Juiz de Fora e região",
             ].map((d) => (
               <div key={d} className="flex items-start gap-3 bg-white rounded-xl p-4">

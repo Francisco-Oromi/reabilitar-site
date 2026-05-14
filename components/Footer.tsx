@@ -118,15 +118,9 @@ export default function Footer() {
 
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 py-6">
-          <p className="text-xs text-slate-500 text-center mb-4">Convênios e parcerias aceitos</p>
-          <div className="flex flex-wrap justify-center items-center gap-6 mb-6">
-            <img src="/images/convenio1.png" alt="Convênio 1" className="h-8 w-auto opacity-50 hover:opacity-80 transition-opacity" />
-            <img src="/images/convenio2.png" alt="Convênio 2" className="h-8 w-auto opacity-50 hover:opacity-80 transition-opacity" />
-            <img src="/images/convenio3.png" alt="Convênio 3" className="h-8 w-auto opacity-50 hover:opacity-80 transition-opacity" />
-          </div>
           <div className="flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-500">
             <p>© {new Date().getFullYear()} Reabilitar Wellness. Todos os direitos reservados.</p>
-            <p>Fisioterapia em Juiz de Fora — Granbery, MG</p>
+            <p>Fisioterapia em Juiz de Fora — Granbery, MG · 100% particular</p>
           </div>
         </div>
       </div>

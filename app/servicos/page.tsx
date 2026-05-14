@@ -223,7 +223,7 @@ export default function ServicosPage() {
             </ul>
           </div>
           <div className="bg-brand-primary-light rounded-2xl p-8 text-center">
-            <div className="text-5xl font-bold text-brand-primary font-heading mb-2">4.9★</div>
+            <div className="text-5xl font-bold text-brand-primary font-heading mb-2">5★</div>
             <p className="text-gray-700 mb-6">Avaliação média no Google</p>
             <div className="grid grid-cols-2 gap-4 text-center">
               <div className="bg-white rounded-xl p-4">

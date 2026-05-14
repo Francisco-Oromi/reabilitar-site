@@ -105,7 +105,7 @@ export default function LiberacaoMiofascialPage() {
       <section className="bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {[{ v:"15+", l:"Anos de Experiência" },{ v:"5.000+", l:"Pacientes Atendidos" },{ v:"1ª sessão", l:"Melhoras Relatadas" },{ v:"4.9⭐", l:"Nota Google" }].map((s) => (
+            {[{ v:"15+", l:"Anos de Experiência" },{ v:"5.000+", l:"Pacientes Atendidos" },{ v:"1ª sessão", l:"Melhoras Relatadas" },{ v:"5★", l:"Nota Google" }].map((s) => (
               <div key={s.l}><div className="text-2xl md:text-3xl font-bold text-brand-primary font-heading">{s.v}</div><div className="text-slate-500 text-sm">{s.l}</div></div>
             ))}
           </div>

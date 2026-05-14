@@ -53,7 +53,7 @@ const faqs = [
   { question: "Por que há um estalo durante o ajuste?", answer: "O estalo (cavitação) é causado pela liberação de gases nas articulações durante a manipulação. É completamente normal, inofensivo e indica que a articulação foi mobilizada corretamente. Alguns ajustes podem não produzir som algum, o que não interfere na eficácia do tratamento." },
   { question: "Quantas sessões são necessárias?", answer: "O número de sessões varia conforme a condição. Casos agudos geralmente respondem em 4 a 8 sessões. Condições crônicas podem requerer mais tempo, com sessões de manutenção mensal para preservar os resultados." },
   { question: "A quiropraxia tem contraindicações?", answer: "Existem algumas contraindicações, como osteoporose severa, fraturas recentes, instabilidade articular ou tumores na coluna. Por isso, a avaliação inicial é fundamental. Ajustes específicos são adaptados para gestantes, idosos e crianças com técnicas mais suaves." },
-  { question: "Quiropraxia é coberta pelo plano de saúde?", answer: "Cobertura varia conforme o plano. Trabalhamos com os principais convênios da região de Juiz de Fora. Entre em contato para verificar se o seu plano está na nossa lista de conveniados ou obter informações sobre valores particulares." },
+  { question: "O atendimento é particular?", answer: "Sim, a Reabilitar é 100% particular. Não trabalhamos com convênios ou planos de saúde. Isso nos permite oferecer quiropraxia sem limitações de sessões ou técnicas. Entre em contato para conhecer os valores e condições de pagamento." },
 ];
 
 const jsonLd = { "@context": "https://schema.org", "@type": "MedicalTherapy", name: "Quiropraxia em Juiz de Fora", description: "Ajuste vertebral quiropráxico para alívio de dores na coluna.", provider: { "@type": "MedicalOrganization", name: "Reabilitar Wellness", telephone: "+553232140522" } };
@@ -101,7 +101,7 @@ export default function QuiropraxiaPage() {
       <section className="bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {[{ v:"15+", l:"Anos de Clínica" },{ v:"Sem Cirurgia", l:"Tratamento Conservador" },{ v:"1ª Sessão", l:"Alívio Relatado" },{ v:"4.9⭐", l:"Google" }].map((s) => (
+            {[{ v:"15+", l:"Anos de Clínica" },{ v:"Sem Cirurgia", l:"Tratamento Conservador" },{ v:"1ª Sessão", l:"Alívio Relatado" },{ v:"5★", l:"Google" }].map((s) => (
               <div key={s.l}><div className="text-2xl md:text-3xl font-bold text-brand-primary font-heading">{s.v}</div><div className="text-slate-500 text-sm">{s.l}</div></div>
             ))}
           </div>

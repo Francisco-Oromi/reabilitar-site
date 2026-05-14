@@ -5,7 +5,7 @@ import { Star, Quote, ArrowRight, CheckCircle } from "lucide-react";
 export const metadata: Metadata = {
   title: "Depoimentos | Reabilitar – Fisioterapia em Juiz de Fora",
   description:
-    "Veja o que nossos pacientes dizem sobre a Reabilitar. Mais de 5.000 pessoas atendidas com avaliação 4.9 estrelas no Google. Resultados reais em fisioterapia e reabilitação em Juiz de Fora.",
+    "Veja o que nossos pacientes dizem sobre a Reabilitar. Mais de 5.000 pessoas atendidas com avaliação 5 estrelas no Google. Resultados reais em fisioterapia e reabilitação em Juiz de Fora.",
   keywords: [
     "depoimentos Reabilitar",
     "avaliações fisioterapia Juiz de Fora",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Depoimentos de Pacientes | Reabilitar",
-    description: "O que nossos mais de 5.000 pacientes dizem sobre a Reabilitar. 4.9 estrelas no Google.",
+    description: "O que nossos mais de 5.000 pacientes dizem sobre a Reabilitar. 5 estrelas no Google.",
     type: "website",
   },
 };
@@ -96,7 +96,7 @@ const depoimentos = [
 
 const stats = [
   { n: "5.000+", label: "Pacientes atendidos" },
-  { n: "4.9★", label: "Avaliação no Google" },
+  { n: "5★", label: "Avaliação no Google" },
   { n: "98%", label: "Recomendariam a Reabilitar" },
   { n: "15+", label: "Anos de experiência" },
 ];
@@ -107,7 +107,7 @@ const jsonLd = {
   name: "Reabilitar – Saúde e Qualidade de Vida",
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "4.9",
+    ratingValue: "5",
     bestRating: "5",
     ratingCount: "247",
   },
@@ -133,7 +133,7 @@ export default function DepoimentosPage() {
             O que nossos pacientes dizem
           </h1>
           <p className="text-blue-100 text-lg max-w-2xl mx-auto">
-            Mais de 5.000 pacientes atendidos. 4.9 estrelas no Google. Veja os relatos reais de
+            Mais de 5.000 pacientes atendidos. 5 estrelas no Google. Veja os relatos reais de
             quem transformou sua saúde com a Reabilitar.
           </p>
         </div>
@@ -187,7 +187,7 @@ export default function DepoimentosPage() {
               ))}
             </div>
             <h2 className="text-2xl font-bold font-heading text-gray-900 mb-2">
-              4.9 estrelas no Google
+              5 estrelas no Google
             </h2>
             <p className="text-gray-600 mb-6">
               Com mais de 247 avaliações verificadas, a Reabilitar é uma das clínicas de fisioterapia

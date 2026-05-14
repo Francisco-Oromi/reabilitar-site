@@ -57,7 +57,7 @@ export default function HomePage() {
             <div>
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 text-sm font-medium mb-6">
                 <Star size={14} className="text-brand-star fill-brand-star" />
-                4.9 no Google · Mais de 500 avaliações
+                5★ no Google · Mais de 500 avaliações
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight mb-6">
                 Fisioterapia de Excelência em{" "}
@@ -91,7 +91,7 @@ export default function HomePage() {
                 className="rounded-2xl shadow-2xl w-full object-cover h-[480px]"
               />
               <div className="absolute -bottom-4 -left-4 bg-white text-brand-primary rounded-2xl p-4 shadow-xl">
-                <div className="text-3xl font-bold font-heading">4.9 ★</div>
+                <div className="text-3xl font-bold font-heading">5 ★</div>
                 <div className="text-slate-500 text-xs">+500 avaliações Google</div>
               </div>
             </div>
@@ -107,7 +107,7 @@ export default function HomePage() {
               { value: "15+",    label: "Anos de Experiência" },
               { value: "5.000+", label: "Pacientes Atendidos" },
               { value: "15+",    label: "Fisioterapeutas" },
-              { value: "4.9 ⭐", label: "Nota no Google" },
+              { value: "5 ★", label: "Nota no Google" },
             ].map((s) => (
               <div key={s.label}>
                 <div className="text-3xl md:text-4xl font-bold text-brand-primary font-heading">{s.value}</div>
@@ -222,7 +222,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-dark font-heading mb-4">O que nossos pacientes dizem</h2>
-            <p className="text-brand-mid text-lg">Mais de 500 avaliações 5 estrelas no Google</p>
+            <p className="text-brand-mid text-lg">Mais de 500 avaliações 5 estrelas no Google — 100% particular</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((t) => (

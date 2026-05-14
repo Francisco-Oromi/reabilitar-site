@@ -55,7 +55,7 @@ const faqs = [
   { question: "O que é fisioterapia avançada?", answer: "A fisioterapia avançada utiliza técnicas manuais especializadas que vão além da convencional, incluindo terapia manual ortopédica, mobilização articular, técnicas neurodinâmicas e outras abordagens baseadas em evidências para tratar as causas profundas da dor." },
   { question: "Quantas sessões vou precisar?", answer: "O número de sessões varia conforme a condição, sua gravidade e histórico de cada paciente. Na avaliação inicial, o fisioterapeuta traçará uma estimativa personalizada. A maioria dos pacientes nota melhoras significativas nas primeiras 4 a 8 sessões." },
   { question: "A fisioterapia avançada tem contraindicações?", answer: "As técnicas são adaptadas para cada perfil de paciente, incluindo idosos, gestantes e pessoas com comorbidades. Durante a avaliação, nosso especialista identificará o protocolo mais seguro e eficaz para o seu caso." },
-  { question: "O plano de saúde cobre o tratamento?", answer: "Trabalhamos com os principais planos de saúde da região de Juiz de Fora. Entre em contato para verificar se o seu convênio está na nossa lista. Também oferecemos condições especiais para pagamento particular." },
+  { question: "O atendimento é particular?", answer: "Sim, a Reabilitar é 100% particular. Não trabalhamos com convênios ou planos de saúde. Esse modelo nos permite oferecer atendimento altamente personalizado, sem limitações de sessões ou técnicas impostas por operadoras. Entre em contato para conhecer nossos valores e condições de pagamento." },
   { question: "Como funciona a primeira consulta?", answer: "Na avaliação inicial, o fisioterapeuta realiza anamnese completa (histórico clínico), exame físico detalhado e testes funcionais. Com isso, é elaborado um diagnóstico cinético-funcional e um plano de tratamento personalizado." },
   { question: "O tratamento causa dor?", answer: "As técnicas são aplicadas com precisão e de forma confortável. Pode ocorrer um leve desconforto em algumas manobras, mas nunca dor intensa. O bem-estar do paciente é nossa prioridade em todas as etapas." },
 ];
@@ -81,7 +81,7 @@ export default function FisioterapiaAvancadaPage() {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
-                <Star size={14} className="text-brand-star fill-brand-star" /> 4.9 no Google · Clínica desde 2007
+                <Star size={14} className="text-brand-star fill-brand-star" /> 5★ no Google · Clínica desde 2007
               </div>
               <h1 className="text-4xl md:text-5xl font-bold font-heading leading-tight mb-5">
                 Fisioterapia Avançada em Juiz de Fora
@@ -99,7 +99,7 @@ export default function FisioterapiaAvancadaPage() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-5 text-sm text-white/80">
-                {["Avaliação gratuita", "Sem lista de espera", "Atende convênios"].map((t) => (
+                {["Avaliação gratuita", "Sem lista de espera", "100% particular"].map((t) => (
                   <span key={t} className="flex items-center gap-1.5"><CheckCircle size={14} className="text-white" /> {t}</span>
                 ))}
               </div>
@@ -116,7 +116,7 @@ export default function FisioterapiaAvancadaPage() {
       <section className="bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {[{ v:"15+", l:"Anos de Clínica" },{ v:"5.000+", l:"Pacientes Tratados" },{ v:"15+", l:"Especialistas" },{ v:"4.9⭐", l:"Nota Google" }].map((s) => (
+            {[{ v:"15+", l:"Anos de Clínica" },{ v:"5.000+", l:"Pacientes Tratados" },{ v:"15+", l:"Especialistas" },{ v:"5★", l:"Nota Google" }].map((s) => (
               <div key={s.l}><div className="text-2xl md:text-3xl font-bold text-brand-primary font-heading">{s.v}</div><div className="text-slate-500 text-sm">{s.l}</div></div>
             ))}
           </div>

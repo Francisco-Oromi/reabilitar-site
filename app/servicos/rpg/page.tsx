@@ -101,7 +101,7 @@ export default function RPGPage() {
       <section className="bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {[{ v:"Global", l:"Abordagem Corporal" },{ v:"15+", l:"Anos Tratando Postura" },{ v:"Duradouro", l:"Resultado" },{ v:"4.9⭐", l:"Google" }].map((s) => (
+            {[{ v:"Global", l:"Abordagem Corporal" },{ v:"15+", l:"Anos Tratando Postura" },{ v:"Duradouro", l:"Resultado" },{ v:"5★", l:"Google" }].map((s) => (
               <div key={s.l}><div className="text-2xl md:text-3xl font-bold text-brand-primary font-heading">{s.v}</div><div className="text-slate-500 text-sm">{s.l}</div></div>
             ))}
           </div>

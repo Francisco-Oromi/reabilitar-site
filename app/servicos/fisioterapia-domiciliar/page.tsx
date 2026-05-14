@@ -51,7 +51,7 @@ const testimonials = [
 const faqs = [
   { question: "O que está incluído no atendimento domiciliar?", answer: "O fisioterapeuta leva todos os equipamentos necessários: aparelhos de eletroterapia portáteis, materiais para exercícios, faixas, bolas e demais recursos para um atendimento completo e de qualidade igual à clínica." },
   { question: "Qual é a área de atendimento em Juiz de Fora?", answer: "Atendemos em toda Juiz de Fora e regiões próximas. Entre em contato informando seu bairro para confirmarmos a disponibilidade e o valor do atendimento na sua localidade." },
-  { question: "Qual é o valor do atendimento domiciliar?", answer: "O valor pode variar conforme a distância e a frequência do tratamento. Entre em contato para um orçamento personalizado. Também verificamos cobertura dos principais planos de saúde." },
+  { question: "Qual é o valor do atendimento domiciliar?", answer: "O valor pode variar conforme a distância e a frequência do tratamento. Somos 100% particular — não trabalhamos com convênios ou planos de saúde. Entre em contato para um orçamento personalizado e condições de pagamento." },
   { question: "Com que frequência são as sessões?", answer: "A frequência é determinada na avaliação inicial e depende da condição clínica. Em geral, são realizadas de 2 a 3 sessões por semana para otimizar os resultados do tratamento." },
   { question: "Vocês atendem pacientes acamados?", answer: "Sim! Nossa equipe está treinada para atender pacientes totalmente acamados, realizando fisioterapia respiratória, motora e preventiva mesmo em situações de imobilidade total." },
   { question: "Precisa ter espaço especial em casa?", answer: "Não é necessário um espaço especial. O fisioterapeuta adapta o atendimento ao ambiente disponível, seja no quarto, sala ou qualquer área confortável da casa." },
@@ -106,7 +106,7 @@ export default function FisioterapiaDomiciliarPage() {
       <section className="bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {[{ v:"15+", l:"Anos de Clínica" },{ v:"5.000+", l:"Pacientes Atendidos" },{ v:"100%", l:"Conforto" },{ v:"4.9⭐", l:"Nota Google" }].map((s) => (
+            {[{ v:"15+", l:"Anos de Clínica" },{ v:"5.000+", l:"Pacientes Atendidos" },{ v:"100%", l:"Conforto" },{ v:"5★", l:"Nota Google" }].map((s) => (
               <div key={s.l}><div className="text-2xl md:text-3xl font-bold text-brand-primary font-heading">{s.v}</div><div className="text-slate-500 text-sm">{s.l}</div></div>
             ))}
           </div>

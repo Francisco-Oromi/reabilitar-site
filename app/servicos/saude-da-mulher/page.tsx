@@ -268,7 +268,7 @@ export default function SaudeDaMulherPage() {
             { n: "500+", label: "Mulheres tratadas" },
             { n: "95%", label: "Taxa de melhora" },
             { n: "8+", label: "Anos de experiência" },
-            { n: "4.9★", label: "Avaliação média" },
+            { n: "5★", label: "Avaliação média" },
           ].map((s) => (
             <div key={s.label}>
               <div className="text-3xl font-bold font-heading">{s.n}</div>

@@ -78,7 +78,7 @@ const programs = [
   {
     icon: <Briefcase className="w-7 h-7" />,
     title: "Plano de Benefícios",
-    desc: "Descontos especiais para colaboradores e seus dependentes nos serviços da Reabilitar. Convênio empresarial com pagamento centralizado ou individual.",
+    desc: "Descontos especiais para colaboradores e seus dependentes nos serviços da Reabilitar. Pagamento centralizado pela empresa ou individual por colaborador.",
     detail: "Até 30% de desconto • Faturamento PJ • Flexível",
   },
 ];
