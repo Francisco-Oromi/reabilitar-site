@@ -41,16 +41,15 @@ const WaIcon = ({ className = "w-5 h-5 fill-current shrink-0" }: { className?: s
 );
 
 /** Fire-and-forget: sends a CAPI event via our server route (no PII in client logs) */
-async function sendCAPIEvent(payload: CAPIEventPayload) {
-  try {
-    await fetch("/api/capi", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-  } catch {
-    // non-blocking — never fail the form flow
-  }
+function sendCAPIEvent(payload: CAPIEventPayload) {
+  const controller = new AbortController();
+  setTimeout(() => controller.abort(), 5000);
+  fetch("/api/capi", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+    signal: controller.signal,
+  }).catch(() => {});
 }
 
 async function saveLead(data: {
@@ -86,12 +85,11 @@ async function saveLead(data: {
     updated_at: new Date().toISOString(),
   };
 
+  // Fire-and-forget — nunca bloqueia o fluxo do formulário
   if (db) {
-    try {
-      await addDoc(collection(db, "leads"), lead);
-    } catch (err) {
+    addDoc(collection(db, "leads"), lead).catch((err) => {
       console.error("Firestore save failed:", err);
-    }
+    });
   }
 
   // GTM dataLayer
@@ -108,8 +106,8 @@ async function saveLead(data: {
   // Meta browser pixel (mesmo event_id para deduplicação com CAPI)
   trackMetaEvent("Lead", { content_name: data.servico }, event_id);
 
-  // Meta Conversions API (server-side, PII is hashed on the server)
-  await sendCAPIEvent({
+  // Meta Conversions API — fire-and-forget, nunca bloqueia
+  sendCAPIEvent({
     event_name: "Lead",
     event_id,
     event_source_url: typeof window !== "undefined" ? window.location.href : "",
@@ -142,7 +140,8 @@ function LeadModal({ onClose, context }: { onClose: () => void; context: string 
     e.preventDefault();
     setSaving(true);
 
-    await saveLead({
+    // Salva lead em background (fire-and-forget) — não bloqueia o fluxo
+    saveLead({
       nome: form.nome,
       email: form.email,
       telefone: form.telefone,
