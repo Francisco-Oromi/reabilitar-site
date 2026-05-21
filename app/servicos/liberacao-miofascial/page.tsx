@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import FAQSection from "@/components/FAQSection";
 import ClinicGallery from "@/components/ClinicGallery";
-import { CheckCircle, Star, Zap, Activity, TrendingUp, Shield, Clock, ArrowRight, MapPin } from "lucide-react";
+import CtaButton from "@/components/CtaButton";
+import { CheckCircle, Star, Zap, Activity, TrendingUp, Shield, Clock, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Liberação Miofascial em Juiz de Fora | Alívio da Dor e Performance",
@@ -10,14 +11,6 @@ export const metadata: Metadata = {
   keywords: ["liberação miofascial juiz de fora", "pontos gatilho jf", "liberação miofascial jf", "fisioterapia miofascial juiz de fora"],
   openGraph: { title: "Liberação Miofascial em Juiz de Fora | Reabilitar Wellness", description: "Alívio de pontos gatilho e melhora da performance. Avaliação gratuita.", type: "website", locale: "pt_BR" },
 };
-
-const WA = "https://wa.me/5532984772914?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20sess%C3%A3o%20de%20libera%C3%A7%C3%A3o%20miofascial.";
-
-const WaIcon = () => (
-  <svg className="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-);
 
 const benefits = [
   { icon: Zap,         title: "Alívio Imediato da Dor",      text: "Desbloqueio de pontos gatilho que causam dor referida em diferentes regiões do corpo." },
@@ -81,12 +74,12 @@ export default function LiberacaoMiofascialPage() {
               Alívio de pontos gatilho, dor muscular crônica e melhora da performance. Técnica avançada realizada por fisioterapeutas especializados.
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
-              <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-all shadow-lg hover:-translate-y-0.5">
-                <WaIcon /> Agendar Sessão Agora
-              </a>
-              <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all">
-                <WaIcon /> Falar pelo WhatsApp
-              </a>
+              <CtaButton context="Liberação Miofascial" className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-all shadow-lg hover:-translate-y-0.5">
+                Agendar Sessão Agora
+              </CtaButton>
+              <CtaButton context="Liberação Miofascial" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all">
+                Falar pelo WhatsApp
+              </CtaButton>
             </div>
             <div className="flex flex-wrap gap-5 text-sm text-white/80">
               {["Avaliação gratuita", "Alívio já na 1ª sessão", "Para atletas e não-atletas"].map((t) => (
@@ -125,9 +118,9 @@ export default function LiberacaoMiofascialPage() {
               <p className="text-brand-mid leading-relaxed mb-6">
                 Através de pressão manual precisa, ventosas terapêuticas ou agulhamento seco, nossos fisioterapeutas liberam essas tensões, restaurando a função muscular normal e eliminando a dor de forma duradoura.
               </p>
-              <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold px-6 py-3 rounded-xl transition-all">
-                Tirar dúvidas <ArrowRight size={16} />
-              </a>
+              <CtaButton context="Liberação Miofascial" className="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold px-6 py-3 rounded-xl transition-all">
+                Tirar dúvidas
+              </CtaButton>
             </div>
             <div className="bg-slate-50 rounded-2xl p-8">
               <h3 className="text-xl font-bold text-brand-dark font-heading mb-5">Condições tratadas</h3>
@@ -157,10 +150,10 @@ export default function LiberacaoMiofascialPage() {
             ))}
           </div>
           <div className="text-center mt-10">
-            <a href={WA} target="_blank" rel="noopener noreferrer"
+            <CtaButton context="Liberação Miofascial"
               className="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold px-8 py-3.5 rounded-xl transition-all shadow-md">
-              <WaIcon /> Quero esse tratamento
-            </a>
+              Quero esse tratamento
+            </CtaButton>
           </div>
         </div>
       </section>
@@ -171,12 +164,12 @@ export default function LiberacaoMiofascialPage() {
           <h2 className="text-2xl md:text-3xl font-bold font-heading mb-3">Chega de conviver com dor muscular!</h2>
           <p className="text-white/85 mb-6">Agende sua sessão e descubra o alívio que a liberação miofascial pode trazer.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark font-bold px-8 py-4 rounded-xl transition-all shadow-lg">
-              <WaIcon /> Agendar pelo WhatsApp
-            </a>
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 font-bold px-8 py-4 rounded-xl transition-all">
-              <WaIcon /> Falar pelo WhatsApp
-            </a>
+            <CtaButton context="Liberação Miofascial" className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark font-bold px-8 py-4 rounded-xl transition-all shadow-lg">
+              Agendar pelo WhatsApp
+            </CtaButton>
+            <CtaButton context="Liberação Miofascial" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 font-bold px-8 py-4 rounded-xl transition-all">
+              Falar pelo WhatsApp
+            </CtaButton>
           </div>
         </div>
       </section>
@@ -221,10 +214,10 @@ export default function LiberacaoMiofascialPage() {
           <h2 className="text-2xl md:text-3xl font-bold font-heading text-brand-dark mb-6">
             Junte-se a mais de 5.000 pacientes que recuperaram sua saúde
           </h2>
-          <a href={WA} target="_blank" rel="noopener noreferrer"
+          <CtaButton context="Liberação Miofascial"
             className="inline-flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-10 py-4 rounded-xl transition-all shadow-lg text-lg">
-            <WaIcon /> Agendar Avaliação Gratuita
-          </a>
+            Agendar Avaliação Gratuita
+          </CtaButton>
         </div>
       </section>
 
@@ -242,12 +235,12 @@ export default function LiberacaoMiofascialPage() {
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Liberte-se da dor muscular hoje</h2>
           <p className="text-white/85 text-lg mb-8">Nossa equipe especializada está pronta para te ajudar a alcançar alívio duradouro.</p>
           <div className="flex flex-wrap justify-center gap-4 mb-6">
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark font-bold px-10 py-4 rounded-xl transition-all shadow-lg text-lg">
-              <WaIcon /> Agendar Sessão
-            </a>
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/40 font-bold px-8 py-4 rounded-xl transition-all text-lg">
-              <WaIcon /> Falar pelo WhatsApp
-            </a>
+            <CtaButton context="Liberação Miofascial" className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark font-bold px-10 py-4 rounded-xl transition-all shadow-lg text-lg">
+              Agendar Sessão
+            </CtaButton>
+            <CtaButton context="Liberação Miofascial" className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/40 font-bold px-8 py-4 rounded-xl transition-all text-lg">
+              Falar pelo WhatsApp
+            </CtaButton>
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-white/70">
             <span><MapPin size={13} className="inline mr-1" />Rua Batista de Oliveira, 1035 · Granbery · JF</span>
