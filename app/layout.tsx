@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import MobileCtaBar from "@/components/MobileCtaBar";
+import { LeadFormProvider } from "@/components/LeadFormModal";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -116,11 +117,13 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col antialiased">
         {/* GTM noscript — substitua GTM-XXXXXXX */}
         {/* <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style={{display:"none",visibility:"hidden"}} /></noscript> */}
-        <Header />
-        <main className="flex-1 pt-[88px] pb-[64px] md:pb-0">{children}</main>
-        <Footer />
-        <WhatsAppFloat />
-        <MobileCtaBar />
+        <LeadFormProvider>
+          <Header />
+          <main className="flex-1 pt-[88px] pb-[64px] md:pb-0">{children}</main>
+          <Footer />
+          <WhatsAppFloat />
+          <MobileCtaBar />
+        </LeadFormProvider>
       </body>
     </html>
   );

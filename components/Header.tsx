@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { useLeadForm } from "./LeadFormModal";
 
 const services = [
   { name: "Fisioterapia Avançada",   href: "/servicos/fisioterapia-avancada" },
@@ -27,6 +28,7 @@ export default function Header() {
   const [open, setOpen]           = useState(false);
   const [servOpen, setServOpen]   = useState(false);
   const [scrolled, setScrolled]   = useState(false);
+  const { openLeadForm }          = useLeadForm();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -86,10 +88,12 @@ export default function Header() {
           </nav>
 
           {/* CTA desktop */}
-          <a href={WA} target="_blank" rel="noopener noreferrer"
-            className="hidden lg:flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-semibold px-4 py-2 rounded-lg transition-all text-sm shadow">
+          <button
+            onClick={() => openLeadForm()}
+            className="hidden lg:flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-semibold px-4 py-2 rounded-lg transition-all text-sm shadow"
+          >
             <WaIcon /> Agendar Avaliação
-          </a>
+          </button>
 
           {/* Mobile hamburger */}
           <button className="lg:hidden p-2 text-slate-700" onClick={() => setOpen(!open)} aria-label="Menu">
@@ -125,14 +129,18 @@ export default function Header() {
           </div>
 
           <div className="pt-3 space-y-2">
-            <a href={WA} target="_blank" rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-brand-wa text-white font-bold py-3 rounded-xl w-full text-sm">
+            <button
+              onClick={() => { setOpen(false); openLeadForm(); }}
+              className="flex items-center justify-center gap-2 bg-brand-wa text-white font-bold py-3 rounded-xl w-full text-sm"
+            >
               <WaIcon /> Agendar Avaliação Gratuita
-            </a>
-            <a href={WA} target="_blank" rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-brand-primary text-white font-bold py-3 rounded-xl w-full text-sm">
+            </button>
+            <button
+              onClick={() => { setOpen(false); openLeadForm(); }}
+              className="flex items-center justify-center gap-2 bg-brand-primary text-white font-bold py-3 rounded-xl w-full text-sm"
+            >
               <WaIcon /> Falar pelo WhatsApp
-            </a>
+            </button>
           </div>
         </div>
       )}

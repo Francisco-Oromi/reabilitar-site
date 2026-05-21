@@ -8,18 +8,20 @@ const WaIcon = () => (
   </svg>
 );
 
-export default function MobileCtaBar() {
+type Props = {
+  children: React.ReactNode;
+  className?: string;
+  context?: string;
+  showIcon?: boolean;
+};
+
+export default function CtaButton({ children, className = "", context = "", showIcon = true }: Props) {
   const { openLeadForm } = useLeadForm();
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden shadow-[0_-4px_20px_rgba(0,0,0,0.12)]">
-      <button
-        onClick={() => openLeadForm()}
-        className="flex w-full items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold py-4 text-sm transition-colors"
-      >
-        <WaIcon />
-        Agendar avaliação gratuita
-      </button>
-    </div>
+    <button onClick={() => openLeadForm(context)} className={className}>
+      {showIcon && <WaIcon />}
+      {children}
+    </button>
   );
 }

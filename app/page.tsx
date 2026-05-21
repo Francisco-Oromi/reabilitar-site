@@ -4,6 +4,7 @@ import {
   Activity, Home, Zap, Heart, Dumbbell, RotateCcw, LayoutGrid, Users,
   Star, CheckCircle, Award, Clock, MapPin, Phone, ArrowRight,
 } from "lucide-react";
+import CtaButton from "@/components/CtaButton";
 
 export const metadata: Metadata = {
   title: "Reabilitar Wellness | Melhor Clínica de Fisioterapia em Juiz de Fora",
@@ -11,13 +12,6 @@ export const metadata: Metadata = {
     "A melhor clínica de fisioterapia em Juiz de Fora. Pilates, Osteopatia, RPG, Quiropraxia, Liberação Miofascial e Saúde da Mulher. Mais de 15 anos de experiência. Avaliação gratuita!",
 };
 
-const WA = "https://wa.me/5532984772914?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20gratuita%20na%20Reabilitar%20Wellness.";
-
-const WaIcon = () => (
-  <svg className="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-);
 
 const services = [
   { icon: Activity,   name: "Fisioterapia Avançada",   desc: "Técnicas manuais avançadas para recuperação e alívio da dor.", href: "/servicos/fisioterapia-avancada",   img: "/images/cover-fisioterapia-avancada.jpg" },
@@ -67,14 +61,12 @@ export default function HomePage() {
                 Há mais de 15 anos devolvendo qualidade de vida através de tratamentos personalizados e técnicas avançadas. Avaliação gratuita para novos pacientes.
               </p>
               <div className="flex flex-wrap gap-4 mb-10">
-                <a href={WA} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-                  <WaIcon /> Agendar Avaliação Gratuita
-                </a>
-                <a href={WA} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all">
-                  <WaIcon /> Falar pelo WhatsApp
-                </a>
+                <CtaButton className="flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                  Agendar Avaliação Gratuita
+                </CtaButton>
+                <CtaButton className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all">
+                  Falar pelo WhatsApp
+                </CtaButton>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-white/75">
                 {["Mais de 15 anos de experiência", "+ 5.000 pacientes atendidos", "15+ fisioterapeutas especializados"].map((t) => (
@@ -199,18 +191,16 @@ export default function HomePage() {
                 <div className="space-y-3 text-sm">
                   <div className="flex items-start gap-3"><MapPin size={18} className="text-brand-star shrink-0 mt-0.5" /><span>Rua Batista de Oliveira, 1035 · Granbery · Juiz de Fora</span></div>
                   <div className="flex items-center gap-3"><Clock size={18} className="text-brand-star shrink-0" /><span>Seg–Qui: 7h–20h · Sex: 7h–19h · Sáb: 8h–12h</span></div>
-                  <div className="flex items-center gap-3"><Phone size={18} className="text-brand-star shrink-0" /><a href={WA} target="_blank" rel="noopener noreferrer" className="hover:text-white/80">(32) 3214-0522</a></div>
+                  <div className="flex items-center gap-3"><Phone size={18} className="text-brand-star shrink-0" /><span>(32) 3214-0522 · (32) 98477-2914</span></div>
                 </div>
               </div>
               <div className="space-y-3">
-                <a href={WA} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark font-bold py-4 rounded-xl transition-all w-full">
-                  <WaIcon /> Falar pelo WhatsApp
-                </a>
-                <a href={WA} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 font-bold py-4 rounded-xl transition-all w-full">
-                  <WaIcon /> Falar pelo WhatsApp
-                </a>
+                <CtaButton className="flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold py-4 rounded-xl transition-all w-full">
+                  Agendar Avaliação Gratuita
+                </CtaButton>
+                <CtaButton className="flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold py-4 rounded-xl transition-all w-full">
+                  Falar pelo WhatsApp
+                </CtaButton>
               </div>
             </div>
           </div>
@@ -265,14 +255,12 @@ export default function HomePage() {
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Comece hoje mesmo sua recuperação</h2>
           <p className="text-white/90 text-lg mb-8">Avaliação gratuita, sem compromisso. Nossa equipe está pronta para te ajudar a viver sem dor.</p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href={WA} target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-white text-brand-cta font-bold px-8 py-4 rounded-xl hover:bg-white/90 transition-all shadow-lg">
-              <WaIcon /> Agendar pelo WhatsApp
-            </a>
-            <a href={WA} target="_blank" rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 font-bold px-8 py-4 rounded-xl transition-all">
-              <WaIcon /> Falar pelo WhatsApp
-            </a>
+            <CtaButton className="flex items-center gap-2 bg-white text-brand-cta font-bold px-8 py-4 rounded-xl hover:bg-white/90 transition-all shadow-lg">
+              Agendar pelo WhatsApp
+            </CtaButton>
+            <CtaButton className="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold px-8 py-4 rounded-xl transition-all">
+              Falar pelo WhatsApp
+            </CtaButton>
           </div>
         </div>
       </section>
