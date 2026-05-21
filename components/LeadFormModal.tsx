@@ -2,6 +2,11 @@
 
 import { createContext, useContext, useState, useCallback } from "react";
 import { X, User, Phone, Mail } from "lucide-react";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "@/lib/firebase";
+import { readTracking } from "@/lib/tracking";
+import type { CAPIEventPayload } from "@/app/api/capi/route";
+import { trackMetaEvent } from "@/components/MetaPixel";
 
 const WA_PHONE = "5532984772914";
 
@@ -35,19 +40,120 @@ const WaIcon = ({ className = "w-5 h-5 fill-current shrink-0" }: { className?: s
   </svg>
 );
 
+/** Fire-and-forget: sends a CAPI event via our server route (no PII in client logs) */
+async function sendCAPIEvent(payload: CAPIEventPayload) {
+  try {
+    await fetch("/api/capi", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+  } catch {
+    // non-blocking — never fail the form flow
+  }
+}
+
+async function saveLead(data: {
+  nome: string;
+  email: string;
+  telefone: string;
+  servico: string;
+}) {
+  const tracking = readTracking();
+  const device =
+    typeof window !== "undefined" && window.innerWidth < 768 ? "mobile" : "desktop";
+
+  // Unique event_id for CAPI ↔ browser pixel deduplication
+  const event_id = `lead_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
+
+  const lead = {
+    ...data,
+    status: "novo",
+    event_id,
+    utm_source: tracking.utm_source,
+    utm_medium: tracking.utm_medium,
+    utm_campaign: tracking.utm_campaign,
+    utm_term: tracking.utm_term,
+    utm_content: tracking.utm_content,
+    gclid: tracking.gclid,
+    fbclid: tracking.fbclid,
+    msclkid: tracking.msclkid,
+    landing_page: tracking.landing_page,
+    referrer: tracking.referrer,
+    page_url: typeof window !== "undefined" ? window.location.href : "",
+    device,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  };
+
+  if (db) {
+    try {
+      await addDoc(collection(db, "leads"), lead);
+    } catch (err) {
+      console.error("Firestore save failed:", err);
+    }
+  }
+
+  // GTM dataLayer
+  if (typeof window !== "undefined" && (window as any).dataLayer) {
+    (window as any).dataLayer.push({
+      event: "lead_form_submit",
+      lead_event_id: event_id,
+      lead_service: data.servico,
+      lead_source: tracking.utm_source || "direto",
+      gclid: tracking.gclid,
+    });
+  }
+
+  // Meta browser pixel (mesmo event_id para deduplicação com CAPI)
+  trackMetaEvent("Lead", { content_name: data.servico }, event_id);
+
+  // Meta Conversions API (server-side, PII is hashed on the server)
+  await sendCAPIEvent({
+    event_name: "Lead",
+    event_id,
+    event_source_url: typeof window !== "undefined" ? window.location.href : "",
+    user_data: {
+      email: data.email,
+      phone: data.telefone,
+      fbclid: tracking.fbclid,
+      first_seen_ms: tracking.first_seen ? new Date(tracking.first_seen).getTime() : undefined,
+      // fbp cookie (set by browser pixel if active)
+      fbp: typeof document !== "undefined"
+        ? document.cookie.split("; ").find((c) => c.startsWith("_fbp="))?.split("=")[1]
+        : undefined,
+    },
+    custom_data: {
+      content_name: data.servico,
+    },
+  });
+}
+
 function LeadModal({ onClose, context }: { onClose: () => void; context: string }) {
   const [form, setForm] = useState({ nome: "", email: "", telefone: "" });
   const [sent, setSent] = useState(false);
+  const [saving, setSaving] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSaving(true);
+
+    await saveLead({
+      nome: form.nome,
+      email: form.email,
+      telefone: form.telefone,
+      servico: context || "Geral",
+    });
+
     const ctxPart = context ? ` Tenho interesse em: ${context}.` : "";
     const msg = `Olá! Me chamo ${form.nome}.${ctxPart} Gostaria de agendar uma avaliação gratuita na Reabilitar Wellness!\n\nMeus dados:\n📧 Email: ${form.email}\n📱 Telefone: ${form.telefone}`;
     window.open(`https://wa.me/${WA_PHONE}?text=${encodeURIComponent(msg)}`, "_blank");
+
+    setSaving(false);
     setSent(true);
   };
 
@@ -147,10 +253,11 @@ function LeadModal({ onClose, context }: { onClose: () => void; context: string 
             </div>
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold py-4 rounded-xl transition-all hover:scale-[1.02] text-base shadow-lg"
+              disabled={saving}
+              className="w-full flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold py-4 rounded-xl transition-all hover:scale-[1.02] text-base shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
             >
               <WaIcon className="w-5 h-5 fill-white" />
-              Enviar pelo WhatsApp
+              {saving ? "Enviando..." : "Enviar pelo WhatsApp"}
             </button>
             <p className="text-xs text-slate-400 text-center">
               Seus dados são usados apenas para entrar em contato com você. Sem spam.

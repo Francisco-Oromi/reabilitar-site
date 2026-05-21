@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
-import MobileCtaBar from "@/components/MobileCtaBar";
 import { LeadFormProvider } from "@/components/LeadFormModal";
+import SiteChrome from "@/components/SiteChrome";
+import { Suspense } from "react";
+import TrackingCapture from "@/components/TrackingCapture";
+import MetaPixel from "@/components/MetaPixel";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -107,8 +107,6 @@ export default function RootLayout({
       <head>
         {/* Google Tag Manager */}
         <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KF4528K2');` }} />
-        {/* Facebook Pixel — substitua 0000000000000 pelo seu ID */}
-        {/* <script dangerouslySetInnerHTML={{ __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','0000000000000');fbq('track','PageView');` }} /> */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
@@ -118,11 +116,11 @@ export default function RootLayout({
         {/* Google Tag Manager (noscript) */}
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KF4528K2" height="0" width="0" style={{display:"none",visibility:"hidden"}} /></noscript>
         <LeadFormProvider>
-          <Header />
-          <main className="flex-1 pt-[88px] pb-[64px] md:pb-0">{children}</main>
-          <Footer />
-          <WhatsAppFloat />
-          <MobileCtaBar />
+          <Suspense fallback={null}>
+            <TrackingCapture />
+            <MetaPixel />
+          </Suspense>
+          <SiteChrome>{children}</SiteChrome>
         </LeadFormProvider>
       </body>
     </html>
