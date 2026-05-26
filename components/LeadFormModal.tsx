@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useCallback } from "react";
-import { X, User, Phone, Mail } from "lucide-react";
+import { X, User, Phone } from "lucide-react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { readTracking } from "@/lib/tracking";
@@ -54,7 +54,6 @@ function sendCAPIEvent(payload: CAPIEventPayload) {
 
 async function saveLead(data: {
   nome: string;
-  email: string;
   telefone: string;
   servico: string;
 }) {
@@ -112,7 +111,6 @@ async function saveLead(data: {
     event_id,
     event_source_url: typeof window !== "undefined" ? window.location.href : "",
     user_data: {
-      email: data.email,
       phone: data.telefone,
       fbclid: tracking.fbclid,
       first_seen_ms: tracking.first_seen ? new Date(tracking.first_seen).getTime() : undefined,
@@ -128,7 +126,7 @@ async function saveLead(data: {
 }
 
 function LeadModal({ onClose, context }: { onClose: () => void; context: string }) {
-  const [form, setForm] = useState({ nome: "", email: "", telefone: "" });
+  const [form, setForm] = useState({ nome: "", telefone: "" });
   const [sent, setSent] = useState(false);
   const [saving, setSaving] = useState(false);
 
@@ -143,13 +141,12 @@ function LeadModal({ onClose, context }: { onClose: () => void; context: string 
     // Salva lead em background (fire-and-forget) — não bloqueia o fluxo
     saveLead({
       nome: form.nome,
-      email: form.email,
       telefone: form.telefone,
       servico: context || "Geral",
     });
 
     const ctxPart = context ? ` Tenho interesse em: ${context}.` : "";
-    const msg = `Olá! Me chamo ${form.nome}.${ctxPart} Gostaria de agendar uma avaliação gratuita na Reabilitar Wellness!\n\nMeus dados:\n📧 Email: ${form.email}\n📱 Telefone: ${form.telefone}`;
+    const msg = `Olá! Me chamo ${form.nome}.${ctxPart} Gostaria de agendar uma avaliação gratuita na Reabilitar Wellness!\n\nMeus dados:\n📱 Telefone: ${form.telefone}`;
     window.open(`https://wa.me/${WA_PHONE}?text=${encodeURIComponent(msg)}`, "_blank");
 
     setSaving(false);
@@ -234,19 +231,6 @@ function LeadModal({ onClose, context }: { onClose: () => void; context: string 
                 value={form.telefone}
                 onChange={handleChange}
                 placeholder="(32) 99999-9999"
-                className="w-full border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent"
-              />
-            </div>
-            <div>
-              <label className="flex items-center gap-1.5 text-sm font-medium text-slate-700 mb-1.5">
-                <Mail size={14} /> E-mail
-              </label>
-              <input
-                name="email"
-                type="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="seu@email.com"
                 className="w-full border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent"
               />
             </div>
