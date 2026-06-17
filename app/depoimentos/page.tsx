@@ -114,17 +114,18 @@ export default function DepoimentosPage() {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-brand-primary via-blue-700 to-blue-900 text-white py-16 md:py-24 text-center">
-        <div className="max-w-4xl mx-auto px-4">
+      <section className="relative overflow-hidden bg-brand-ink text-white py-16 md:py-24 text-center">
+        <div className="absolute inset-0 hero-grain opacity-70" />
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
           <div className="flex justify-center gap-1 mb-4">
             {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} className="w-8 h-8 text-yellow-400 fill-yellow-400" />
+              <Star key={i} className="w-8 h-8 text-brand-star fill-brand-star" />
             ))}
           </div>
           <h1 className="text-4xl md:text-5xl font-bold font-heading mb-4">
             O que nossos pacientes dizem
           </h1>
-          <p className="text-blue-100 text-lg max-w-2xl mx-auto">
+          <p className="text-white/80 text-lg max-w-2xl mx-auto">
             Mais de 5.000 pacientes atendidos. 5 estrelas no Google. Veja os relatos reais de
             quem transformou sua saúde com a Reabilitar.
           </p>
@@ -137,14 +138,14 @@ export default function DepoimentosPage() {
           {stats.map((s) => (
             <div key={s.label}>
               <div className="text-3xl font-bold font-heading">{s.n}</div>
-              <div className="text-blue-200 text-sm mt-1">{s.label}</div>
+              <div className="text-white/70 text-sm mt-1">{s.label}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* Testimonials Grid */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-slate-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-6">
             {depoimentos.map((d) => (
@@ -152,13 +153,13 @@ export default function DepoimentosPage() {
                 <Quote className="w-8 h-8 text-brand-primary-light mb-4" />
                 <div className="flex gap-1 mb-3">
                   {Array.from({ length: d.stars }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                    <Star key={i} className="w-4 h-4 text-brand-star fill-brand-star" />
                   ))}
                 </div>
-                <p className="text-gray-700 italic text-sm mb-5 leading-relaxed">"{d.texto}"</p>
-                <div className="border-t border-gray-100 pt-4">
-                  <div className="font-bold text-gray-900">{d.nome}</div>
-                  <div className="text-gray-500 text-xs mt-0.5">{d.condicao}</div>
+                <p className="text-brand-mid italic text-sm mb-5 leading-relaxed">"{d.texto}"</p>
+                <div className="border-t border-slate-100 pt-4">
+                  <div className="font-bold text-brand-dark">{d.nome}</div>
+                  <div className="text-slate-500 text-xs mt-0.5">{d.condicao}</div>
                   <div className="inline-block mt-2 text-xs bg-brand-primary-light text-brand-primary px-2 py-0.5 rounded-full font-medium">
                     {d.servico}
                   </div>
@@ -172,21 +173,21 @@ export default function DepoimentosPage() {
       {/* Google Reviews CTA */}
       <section className="py-14 bg-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+          <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200">
             <div className="flex justify-center gap-1 mb-4">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="w-6 h-6 text-yellow-400 fill-yellow-400" />
+                <Star key={i} className="w-6 h-6 text-brand-star fill-brand-star" />
               ))}
             </div>
-            <h2 className="text-2xl font-bold font-heading text-gray-900 mb-2">
+            <h2 className="text-2xl font-bold font-heading text-brand-dark mb-2">
               5 estrelas no Google
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-brand-mid mb-6">
               Com mais de 247 avaliações verificadas, a Reabilitar é uma das clínicas de fisioterapia
               mais bem avaliadas de Juiz de Fora.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CtaButton className="inline-flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-6 py-3 rounded-full transition-all hover:scale-105">
+              <CtaButton className="inline-flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-6 py-3 rounded-xl transition-all hover:scale-105">
                 Quero ser o próximo paciente
               </CtaButton>
             </div>
@@ -195,9 +196,9 @@ export default function DepoimentosPage() {
       </section>
 
       {/* Diferenciais */}
-      <section className="py-14 bg-gray-50">
+      <section className="py-14 bg-slate-50">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold font-heading text-gray-900 mb-8">
+          <h2 className="text-2xl font-bold font-heading text-brand-dark mb-8">
             Por que tantos pacientes nos recomendam?
           </h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -209,7 +210,7 @@ export default function DepoimentosPage() {
               "Resultados mensuráveis e documentados",
               "Comunicação transparente em todo o processo",
             ].map((d) => (
-              <div key={d} className="flex items-center gap-2 bg-white rounded-xl p-4 shadow-sm text-sm text-gray-700">
+              <div key={d} className="flex items-center gap-2 bg-white rounded-xl p-4 shadow-sm text-sm text-brand-mid">
                 <CheckCircle className="w-4 h-4 text-brand-health flex-shrink-0" />
                 {d}
               </div>
@@ -219,21 +220,21 @@ export default function DepoimentosPage() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-16 bg-gray-900 text-white text-center">
+      <section className="py-16 bg-brand-ink text-white text-center">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold font-heading mb-4">
             Faça parte desses resultados
           </h2>
-          <p className="text-gray-300 mb-8">
+          <p className="text-slate-300 mb-8">
             Agende sua avaliação gratuita e descubra como a Reabilitar pode transformar sua saúde.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CtaButton className="inline-flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold text-lg px-8 py-4 rounded-full shadow-xl transition-all hover:scale-105">
+            <CtaButton className="inline-flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold text-lg px-8 py-4 rounded-xl shadow-xl transition-all hover:scale-105">
               Agendar avaliação gratuita
             </CtaButton>
             <Link
               href="/servicos"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-semibold text-lg px-8 py-4 rounded-full transition-all"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-semibold text-lg px-8 py-4 rounded-xl transition-all"
             >
               Ver nossos serviços
               <ArrowRight className="w-5 h-5" />

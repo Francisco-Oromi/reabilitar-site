@@ -66,7 +66,7 @@ const services = [
   {
     icon: <Heart className="w-8 h-8" />,
     tag: "Destaque",
-    tagColor: "bg-rose-500 text-white",
+    tagColor: "bg-brand-primary text-white",
     title: "Quick Massage",
     subtitle: "Massagem expressa para equipes e eventos",
     desc: "Leve momentos de relaxamento e bem-estar imediato para sua equipe ou evento corporativo com nossa técnica de massagem rápida e eficaz.",
@@ -78,9 +78,9 @@ const services = [
       "Ideal para feiras, convenções e SIPATs",
       "Datas comemorativas",
     ],
-    color: "border-rose-200",
-    bg: "bg-rose-50",
-    iconBg: "bg-rose-500 text-white",
+    color: "border-brand-primary/20",
+    bg: "bg-brand-primary-light",
+    iconBg: "bg-brand-primary text-white",
   },
   {
     icon: <TrendingUp className="w-8 h-8" />,
@@ -98,9 +98,9 @@ const services = [
       "Campanhas preventivas",
       "Incentivo à atividade física",
     ],
-    color: "border-indigo-200",
-    bg: "bg-indigo-50",
-    iconBg: "bg-indigo-500 text-white",
+    color: "border-brand-primary/20",
+    bg: "bg-brand-primary-light",
+    iconBg: "bg-brand-primary text-white",
   },
   {
     icon: <Sparkles className="w-8 h-8" />,
@@ -119,9 +119,9 @@ const services = [
       "Palestras inspiradoras",
       "Feiras de saúde",
     ],
-    color: "border-amber-200",
-    bg: "bg-amber-50",
-    iconBg: "bg-amber-500 text-white",
+    color: "border-brand-primary/20",
+    bg: "bg-brand-primary-light",
+    iconBg: "bg-brand-primary text-white",
   },
 ];
 
@@ -163,13 +163,10 @@ export default function SipatPage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-indigo-900 to-brand-primary text-white py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-primary opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-400 opacity-10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4" />
-        </div>
+      <section className="relative overflow-hidden bg-brand-ink text-white py-20 md:py-28">
+        <div className="absolute inset-0 hero-grain opacity-70" />
 
-        <div className="relative max-w-6xl mx-auto px-4">
+        <div className="relative z-10 max-w-6xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             {/* Left */}
             <div className="flex-1">
@@ -181,7 +178,7 @@ export default function SipatPage() {
                 Transforme sua{" "}
                 <span className="text-brand-star">SIPAT</span> em uma
                 experiência que{" "}
-                <span className="text-teal-300">as pessoas lembrarão</span>
+                <span className="text-brand-primary-light">as pessoas lembrarão</span>
               </h1>
               <p className="text-lg text-white/80 mb-8 max-w-xl leading-relaxed">
                 Saúde, bem-estar e experiências que transformam equipes. Há quase duas décadas levando qualidade de vida para dentro das empresas.
@@ -189,14 +186,14 @@ export default function SipatPage() {
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <CtaButton
                   context="SIPAT / Eventos Corporativos"
-                  className="inline-flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold text-lg px-8 py-4 rounded-full shadow-2xl transition-all hover:scale-105"
+                  className="inline-flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold text-lg px-8 py-4 rounded-xl shadow-2xl transition-all hover:scale-105"
                 >
                   Solicitar proposta gratuita
                 </CtaButton>
                 <CtaButton
                   context="SIPAT / Eventos Corporativos"
                   showIcon={false}
-                  className="inline-flex items-center justify-center gap-2 border-2 border-white/50 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-full transition-all"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-white/50 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-xl transition-all"
                 >
                   Falar pelo WhatsApp
                   <ArrowRight className="w-4 h-4" />
@@ -209,7 +206,7 @@ export default function SipatPage() {
                   "Atendemos todo Juiz de Fora e região",
                 ].map((t) => (
                   <span key={t} className="flex items-center gap-1.5">
-                    <CheckCircle className="w-3.5 h-3.5 text-teal-300 shrink-0" />
+                    <CheckCircle className="w-3.5 h-3.5 text-brand-primary-light shrink-0" />
                     {t}
                   </span>
                 ))}
@@ -219,12 +216,12 @@ export default function SipatPage() {
             {/* Right — floating cards */}
             <div className="hidden lg:grid grid-cols-2 gap-4 shrink-0 w-80">
               {[
-                { icon: <Shield className="w-6 h-6" />, label: "SIPAT completa", color: "text-teal-300" },
-                { icon: <Heart className="w-6 h-6" />, label: "Quick Massage", color: "text-rose-300" },
-                { icon: <TrendingUp className="w-6 h-6" />, label: "QV Corporativa", color: "text-indigo-300" },
-                { icon: <Sparkles className="w-6 h-6" />, label: "Wellness Day", color: "text-amber-300" },
-                { icon: <Users className="w-6 h-6" />, label: "Yoga & Meditação", color: "text-purple-300" },
-                { icon: <Zap className="w-6 h-6" />, label: "Palestras", color: "text-blue-300" },
+                { icon: <Shield className="w-6 h-6" />, label: "SIPAT completa", color: "text-brand-primary-light" },
+                { icon: <Heart className="w-6 h-6" />, label: "Quick Massage", color: "text-brand-primary-light" },
+                { icon: <TrendingUp className="w-6 h-6" />, label: "QV Corporativa", color: "text-brand-primary-light" },
+                { icon: <Sparkles className="w-6 h-6" />, label: "Wellness Day", color: "text-brand-primary-light" },
+                { icon: <Users className="w-6 h-6" />, label: "Yoga & Meditação", color: "text-brand-primary-light" },
+                { icon: <Zap className="w-6 h-6" />, label: "Palestras", color: "text-brand-primary-light" },
               ].map((c) => (
                 <div
                   key={c.label}
@@ -314,7 +311,7 @@ export default function SipatPage() {
       </section>
 
       {/* ── MID CTA ── */}
-      <section className="py-16 bg-gradient-to-r from-indigo-700 to-brand-primary text-white text-center">
+      <section className="py-16 bg-brand-primary text-white text-center">
         <div className="max-w-3xl mx-auto px-4">
           <Calendar className="w-10 h-10 mx-auto mb-4 opacity-80" />
           <h2 className="text-2xl md:text-3xl font-bold font-heading mb-4">
@@ -325,7 +322,7 @@ export default function SipatPage() {
           </p>
           <CtaButton
             context="SIPAT Urgente"
-            className="inline-flex items-center gap-2 bg-white text-indigo-700 hover:bg-indigo-50 font-bold text-lg px-10 py-4 rounded-full shadow-xl transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 bg-white text-brand-primary-dark hover:bg-white/90 font-bold text-lg px-10 py-4 rounded-xl shadow-lg transition-colors"
           >
             Quero planejar minha SIPAT
           </CtaButton>
@@ -348,7 +345,7 @@ export default function SipatPage() {
               </p>
               <CtaButton
                 context="SIPAT / Eventos Corporativos"
-                className="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-primary-dark text-white font-bold px-7 py-3.5 rounded-full transition-all shadow-lg"
+                className="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-primary-dark text-white font-bold px-7 py-3.5 rounded-xl transition-all shadow-lg"
               >
                 Solicitar proposta gratuita
               </CtaButton>
@@ -395,15 +392,15 @@ export default function SipatPage() {
                 n: "5.000+",
                 unit: "",
                 label: "Pacientes e colaboradores atendidos",
-                color: "text-indigo-600",
-                bg: "bg-indigo-50",
+                color: "text-brand-primary",
+                bg: "bg-brand-primary-light",
               },
               {
                 n: "15+",
                 unit: "",
                 label: "Profissionais especializados na equipe",
-                color: "text-rose-600",
-                bg: "bg-rose-50",
+                color: "text-brand-primary",
+                bg: "bg-brand-primary-light",
               },
             ].map((s) => (
               <div key={s.label} className={`${s.bg} rounded-3xl p-8`}>
@@ -419,10 +416,10 @@ export default function SipatPage() {
       </section>
 
       {/* ── COMO FUNCIONA ── */}
-      <section className="py-20 bg-slate-900 text-white">
+      <section className="py-20 bg-brand-ink text-white">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-14">
-            <p className="text-teal-400 font-semibold text-sm uppercase tracking-widest mb-2">
+            <p className="text-brand-primary-light font-semibold text-sm uppercase tracking-widest mb-2">
               Simples e rápido
             </p>
             <h2 className="text-3xl md:text-4xl font-bold font-heading">
@@ -478,11 +475,9 @@ export default function SipatPage() {
       </section>
 
       {/* ── FINAL CTA ── */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-indigo-900 to-brand-primary text-white text-center relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-brand-primary opacity-10 rounded-full blur-3xl" />
-        </div>
-        <div className="relative max-w-3xl mx-auto px-4">
+      <section className="py-20 bg-brand-ink text-white text-center relative overflow-hidden">
+        <div className="absolute inset-0 hero-grain opacity-70" />
+        <div className="relative z-10 max-w-3xl mx-auto px-4">
           <Sparkles className="w-10 h-10 text-brand-star mx-auto mb-4" />
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
             Sua equipe merece mais do que uma ação pontual.
@@ -496,13 +491,13 @@ export default function SipatPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CtaButton
               context="SIPAT / Eventos Corporativos"
-              className="inline-flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold text-lg px-10 py-4 rounded-full shadow-2xl transition-all hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold text-lg px-10 py-4 rounded-xl shadow-2xl transition-all hover:scale-105"
             >
               Solicitar proposta gratuita
             </CtaButton>
             <Link
               href="/para-empresa"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white/40 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-full transition-all"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white/40 text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-xl transition-all"
             >
               Ver saúde corporativa completa
               <ArrowRight className="w-4 h-4" />

@@ -60,8 +60,9 @@ export default function LiberacaoMiofascialPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* HERO */}
-      <section className="bg-gradient-to-br from-yellow-600 to-yellow-800 text-white py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="relative overflow-hidden bg-brand-ink text-white py-16 md:py-20">
+        <div className="absolute inset-0 hero-grain opacity-70" />
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
             <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
@@ -83,7 +84,7 @@ export default function LiberacaoMiofascialPage() {
             </div>
             <div className="flex flex-wrap gap-5 text-sm text-white/80">
               {["Avaliação gratuita", "Alívio já na 1ª sessão", "Para atletas e não-atletas"].map((t) => (
-                <span key={t} className="flex items-center gap-1.5"><CheckCircle size={14} className="text-yellow-300" /> {t}</span>
+                <span key={t} className="flex items-center gap-1.5"><CheckCircle size={14} className="text-brand-primary-light" /> {t}</span>
               ))}
             </div>
             </div>
@@ -143,7 +144,7 @@ export default function LiberacaoMiofascialPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {benefits.map(({ icon: Icon, title, text }) => (
               <div key={title} className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-                <div className="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center mb-4"><Icon size={22} className="text-yellow-700" /></div>
+                <div className="w-12 h-12 bg-brand-primary-light rounded-xl flex items-center justify-center mb-4"><Icon size={22} className="text-brand-primary" /></div>
                 <h3 className="font-bold text-brand-dark font-heading mb-2">{title}</h3>
                 <p className="text-brand-mid text-sm leading-relaxed">{text}</p>
               </div>
@@ -159,7 +160,7 @@ export default function LiberacaoMiofascialPage() {
       </section>
 
       {/* MID CTA */}
-      <section className="py-12 bg-yellow-700 text-white">
+      <section className="py-12 bg-brand-primary text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold font-heading mb-3">Chega de conviver com dor muscular!</h2>
           <p className="text-white/85 mb-6">Agende sua sessão e descubra o alívio que a liberação miofascial pode trazer.</p>
@@ -181,7 +182,7 @@ export default function LiberacaoMiofascialPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {process.map((p) => (
               <div key={p.step} className="text-center">
-                <div className="w-14 h-14 bg-yellow-600 rounded-2xl flex items-center justify-center text-white text-xl font-bold font-heading mx-auto mb-4">{p.step}</div>
+                <div className="w-14 h-14 bg-brand-primary rounded-2xl flex items-center justify-center text-white text-xl font-bold font-heading mx-auto mb-4">{p.step}</div>
                 <h3 className="font-bold text-brand-dark font-heading mb-2">{p.title}</h3>
                 <p className="text-brand-mid text-sm leading-relaxed">{p.text}</p>
               </div>
@@ -230,7 +231,7 @@ export default function LiberacaoMiofascialPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-16 bg-gradient-to-br from-yellow-700 to-yellow-900 text-white">
+      <section className="py-16 bg-gradient-to-br from-brand-ink to-brand-ink-light text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Liberte-se da dor muscular hoje</h2>
           <p className="text-white/85 text-lg mb-8">Nossa equipe especializada está pronta para te ajudar a alcançar alívio duradouro.</p>
@@ -244,7 +245,7 @@ export default function LiberacaoMiofascialPage() {
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-white/70">
             <span><MapPin size={13} className="inline mr-1" />Rua Batista de Oliveira, 1035 · Granbery · JF</span>
-            <span>🕐 Seg–Qui: 7h–20h · Sex: 7h–19h · Sáb: 8h–12h</span>
+            <span className="flex items-center gap-1"><Clock size={13} /> Seg–Qui 7h–20h · Sex 7h–19h · Sáb 8h–12h</span>
           </div>
         </div>
       </section>

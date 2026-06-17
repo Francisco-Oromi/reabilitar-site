@@ -70,8 +70,9 @@ export default function FisioterapiaAvancadaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* HERO */}
-      <section className="bg-gradient-to-br from-brand-primary to-brand-primary-dark text-white py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="relative overflow-hidden bg-brand-ink text-white py-16 md:py-20">
+        <div className="absolute inset-0 hero-grain opacity-70" />
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
@@ -264,7 +265,7 @@ export default function FisioterapiaAvancadaPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-16 bg-gradient-to-br from-brand-primary to-brand-primary-dark text-white">
+      <section className="py-16 bg-gradient-to-br from-brand-ink to-brand-ink-light text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Sua recuperação começa com uma ligação</h2>
           <p className="text-white/85 text-lg mb-8">Não deixe a dor limitar sua vida. Nossos especialistas estão prontos para te ajudar.</p>
@@ -283,8 +284,8 @@ export default function FisioterapiaAvancadaPage() {
             </CtaButton>
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-white/70">
-            <span>📍 Rua Batista de Oliveira, 1035 · Granbery · JF</span>
-            <span>🕐 Seg–Qui: 7h–20h · Sex: 7h–19h · Sáb: 8h–12h</span>
+            <span className="flex items-center gap-1"><MapPin size={13} /> Rua Batista de Oliveira, 1035 · Granbery · JF</span>
+            <span className="flex items-center gap-1"><Clock size={13} /> Seg–Qui 7h–20h · Sex 7h–19h · Sáb 8h–12h</span>
           </div>
         </div>
       </section>

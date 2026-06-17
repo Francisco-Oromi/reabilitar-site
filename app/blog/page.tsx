@@ -31,7 +31,7 @@ const posts = [
       "Mais de 90% dos casos de hérnia de disco respondem bem ao tratamento conservador. Entenda quando a cirurgia é realmente necessária e como a fisioterapia pode evitá-la.",
     tempo: "8 min",
     data: "12 Mai 2025",
-    cor: "bg-blue-100 text-blue-700",
+    cor: "bg-brand-primary-light text-brand-primary",
   },
   {
     slug: "incontinencia-urinaria-tratamento-fisioterapia",
@@ -41,7 +41,7 @@ const posts = [
       "A fisioterapia pélvica tem taxas de sucesso superiores a 80% no tratamento da incontinência urinária. Veja como funciona e quem pode se beneficiar.",
     tempo: "7 min",
     data: "05 Mai 2025",
-    cor: "bg-pink-100 text-pink-700",
+    cor: "bg-brand-primary-light text-brand-primary",
   },
   {
     slug: "exercicios-para-lombalgia-em-casa",
@@ -51,7 +51,7 @@ const posts = [
       "Selecionados por fisioterapeutas especialistas, esses exercícios ajudam a aliviar a dor e fortalecer a musculatura de suporte da coluna lombar.",
     tempo: "5 min",
     data: "28 Abr 2025",
-    cor: "bg-blue-100 text-blue-700",
+    cor: "bg-brand-primary-light text-brand-primary",
   },
   {
     slug: "pilates-clinico-vs-pilates-comum",
@@ -61,7 +61,7 @@ const posts = [
       "Entenda por que o pilates supervisionado por fisioterapeuta é mais seguro e eficaz para reabilitação e por que ele não é apenas uma aula de exercícios.",
     tempo: "6 min",
     data: "20 Abr 2025",
-    cor: "bg-purple-100 text-purple-700",
+    cor: "bg-brand-primary-light text-brand-primary",
   },
   {
     slug: "o-que-e-rpg-como-funciona",
@@ -71,7 +71,7 @@ const posts = [
       "O método de Philippe Souchard age nas cadeias musculares e trata as causas — não os sintomas — dos problemas posturais. Veja como funciona na prática.",
     tempo: "7 min",
     data: "14 Abr 2025",
-    cor: "bg-teal-100 text-teal-700",
+    cor: "bg-brand-primary-light text-brand-primary",
   },
   {
     slug: "fisioterapia-domiciliar-para-idosos",
@@ -81,7 +81,7 @@ const posts = [
       "O atendimento em domicílio traz resultados superiores para idosos com dificuldade de locomoção. Conheça as vantagens e como funciona na Reabilitar.",
     tempo: "6 min",
     data: "08 Abr 2025",
-    cor: "bg-emerald-100 text-emerald-700",
+    cor: "bg-brand-primary-light text-brand-primary",
   },
 ];
 
@@ -91,17 +91,18 @@ export default function BlogPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-brand-primary via-blue-700 to-blue-900 text-white py-16 md:py-20 text-center">
-        <div className="max-w-3xl mx-auto px-4">
+      <section className="relative overflow-hidden bg-brand-ink text-white py-16 md:py-20 text-center">
+        <div className="absolute inset-0 hero-grain opacity-70" />
+        <div className="max-w-3xl mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold font-heading mb-4">Blog Reabilitar</h1>
-          <p className="text-blue-100 text-lg">
+          <p className="text-white/80 text-lg">
             Conteúdo especializado em fisioterapia, saúde e bem-estar escrito pela nossa equipe de
             especialistas. Informação baseada em evidências para cuidar melhor de você.
           </p>
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-slate-50">
         <div className="max-w-6xl mx-auto px-4">
           {/* Categories */}
           <div className="flex flex-wrap gap-2 mb-10 justify-center">
@@ -111,7 +112,7 @@ export default function BlogPage() {
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   i === 0
                     ? "bg-brand-primary text-white"
-                    : "bg-white text-gray-600 hover:bg-brand-primary-light hover:text-brand-primary border border-gray-200"
+                    : "bg-white text-brand-mid hover:bg-brand-primary-light hover:text-brand-primary border border-slate-200"
                 }`}
               >
                 {c}
@@ -127,7 +128,7 @@ export default function BlogPage() {
                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group"
               >
                 {/* Placeholder thumbnail */}
-                <div className="h-44 bg-gradient-to-br from-brand-primary-light to-blue-100 flex items-center justify-center">
+                <div className="h-44 bg-gradient-to-br from-brand-primary-light to-white flex items-center justify-center">
                   <div className="text-center px-4">
                     <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${p.cor} mb-2`}>
                       {p.categoria}
@@ -143,17 +144,17 @@ export default function BlogPage() {
                       <Tag className="w-3 h-3" />
                       {p.categoria}
                     </span>
-                    <span className="flex items-center gap-1 text-gray-400 text-xs">
+                    <span className="flex items-center gap-1 text-slate-400 text-xs">
                       <Clock className="w-3 h-3" />
                       {p.tempo} de leitura
                     </span>
                   </div>
-                  <h2 className="font-bold text-gray-900 mb-2 leading-tight group-hover:text-brand-primary transition-colors line-clamp-2">
+                  <h2 className="font-bold text-brand-dark mb-2 leading-tight group-hover:text-brand-primary transition-colors line-clamp-2">
                     {p.titulo}
                   </h2>
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">{p.resumo}</p>
+                  <p className="text-brand-mid text-sm mb-4 line-clamp-3">{p.resumo}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-gray-400 text-xs">{p.data}</span>
+                    <span className="text-slate-400 text-xs">{p.data}</span>
                     <Link
                       href={`/blog/${p.slug}`}
                       className="inline-flex items-center gap-1 text-brand-primary text-sm font-medium hover:gap-2 transition-all"
@@ -169,7 +170,7 @@ export default function BlogPage() {
 
           {/* Load more placeholder */}
           <div className="mt-10 text-center">
-            <button className="border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white font-semibold px-8 py-3 rounded-full transition-all">
+            <button className="border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white font-semibold px-8 py-3 rounded-xl transition-all">
               Carregar mais artigos
             </button>
           </div>
@@ -179,30 +180,30 @@ export default function BlogPage() {
       {/* Newsletter */}
       <section className="py-14 bg-brand-primary-light">
         <div className="max-w-2xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold font-heading text-gray-900 mb-3">
+          <h2 className="text-2xl font-bold font-heading text-brand-dark mb-3">
             Receba conteúdo especializado no WhatsApp
           </h2>
-          <p className="text-gray-600 mb-6">
+          <p className="text-brand-mid mb-6">
             Entre em contato e receba dicas de saúde, fisioterapia e bem-estar diretamente no seu
             WhatsApp, sem spam.
           </p>
-          <CtaButton className="inline-flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-8 py-4 rounded-full transition-all hover:scale-105">
+          <CtaButton className="inline-flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-8 py-4 rounded-xl transition-all hover:scale-105">
             Seguir no WhatsApp
           </CtaButton>
         </div>
       </section>
 
       {/* CTA Agendamento */}
-      <section className="py-14 bg-gray-900 text-white text-center">
+      <section className="py-14 bg-brand-ink text-white text-center">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-2xl font-bold font-heading mb-3">
             Tem uma queixa? Fale com um especialista
           </h2>
-          <p className="text-gray-300 mb-6">
+          <p className="text-slate-300 mb-6">
             Nossos artigos informam, mas nada substitui uma avaliação presencial. Agende sua consulta
             gratuita agora.
           </p>
-          <CtaButton className="inline-flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold text-lg px-8 py-4 rounded-full shadow-xl transition-all hover:scale-105">
+          <CtaButton className="inline-flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold text-lg px-8 py-4 rounded-xl shadow-xl transition-all hover:scale-105">
             Agendar avaliação gratuita
           </CtaButton>
         </div>

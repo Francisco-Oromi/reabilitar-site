@@ -205,12 +205,9 @@ export default function SaudeDaMulherPage() {
       />
 
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-pink-700 via-rose-600 to-pink-500 text-white py-16 md:py-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4">
+      <section className="relative overflow-hidden bg-brand-ink text-white py-16 md:py-20">
+        <div className="absolute inset-0 hero-grain opacity-70" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-6">
@@ -219,24 +216,24 @@ export default function SaudeDaMulherPage() {
               </div>
               <h1 className="text-4xl md:text-5xl font-bold font-heading mb-6 leading-tight">
                 Fisioterapia para{" "}
-                <span className="text-pink-200">Saúde da Mulher</span>{" "}
+                <span className="text-brand-primary-light">Saúde da Mulher</span>{" "}
                 em Juiz de Fora
               </h1>
-              <p className="text-lg md:text-xl text-pink-100 mb-8">
+              <p className="text-lg md:text-xl text-white/80 mb-8">
                 Tratamento especializado do assoalho pélvico para incontinência urinária, pós-parto,
                 gestação, menopausa, vaginismo e dor pélvica. Ambiente exclusivo, acolhedor e sigiloso.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <CtaButton context="Saúde da Mulher"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-pink-700 hover:bg-pink-50 font-bold text-lg px-8 py-4 rounded-full shadow-xl transition-all hover:scale-105">
+                  className="inline-flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg transition-colors">
                   Agendar Avaliação Gratuita
                 </CtaButton>
                 <CtaButton context="Saúde da Mulher"
-                  className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/20 font-semibold text-lg px-8 py-4 rounded-full transition-all">
+                  className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/20 font-semibold text-lg px-8 py-4 rounded-xl transition-all">
                   Falar pelo WhatsApp
                 </CtaButton>
               </div>
-              <div className="flex flex-wrap gap-4 text-sm text-pink-100">
+              <div className="flex flex-wrap gap-4 text-sm text-white/80">
                 <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4" /> Ambiente 100% feminino</span>
                 <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4" /> Avaliação inicial gratuita</span>
                 <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4" /> Total sigilo e privacidade</span>
@@ -252,7 +249,7 @@ export default function SaudeDaMulherPage() {
       </section>
 
       {/* Stats */}
-      <section className="bg-pink-700 text-white py-8">
+      <section className="bg-brand-primary text-white py-8">
         <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {[
             { n: "500+", label: "Mulheres tratadas" },
@@ -262,7 +259,7 @@ export default function SaudeDaMulherPage() {
           ].map((s) => (
             <div key={s.label}>
               <div className="text-3xl font-bold font-heading">{s.n}</div>
-              <div className="text-pink-200 text-sm mt-1">{s.label}</div>
+              <div className="text-brand-primary-light text-sm mt-1">{s.label}</div>
             </div>
           ))}
         </div>
@@ -272,29 +269,29 @@ export default function SaudeDaMulherPage() {
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <span className="text-pink-600 font-semibold text-sm uppercase tracking-wider">
+            <span className="text-brand-primary font-semibold text-sm uppercase tracking-wider">
               Especialidade reconhecida
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mt-2 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-brand-dark mt-2 mb-4">
               O que é a Fisioterapia para Saúde da Mulher?
             </h2>
-            <p className="text-gray-600 mb-4">
+            <p className="text-brand-mid mb-4">
               A Fisioterapia para Saúde da Mulher é uma especialidade reconhecida pelo COFFITO que
               avalia e trata disfunções urinárias, intestinais, sexuais e musculoesqueléticas
               relacionadas à pelve feminina.
             </p>
-            <p className="text-gray-600 mb-4">
+            <p className="text-brand-mid mb-4">
               O assoalho pélvico é um conjunto de músculos e ligamentos que sustenta a bexiga, o
               útero e o intestino. Quando enfraquecido ou hipertônico, pode causar vazamento de
               urina, prolapso, dor pélvica e disfunções sexuais.
             </p>
-            <p className="text-gray-600">
+            <p className="text-brand-mid">
               Com técnicas como biofeedback, estimulação elétrica funcional, cinesioterapia e
               terapia manual, restauramos a função pélvica de forma segura, eficaz e sem cirurgia.
             </p>
           </div>
-          <div className="bg-pink-50 rounded-2xl p-8">
-            <h3 className="font-bold text-gray-900 mb-4 text-lg">Indicações da especialidade:</h3>
+          <div className="bg-slate-50 rounded-2xl p-8">
+            <h3 className="font-bold text-brand-dark mb-4 text-lg">Indicações da especialidade:</h3>
             <ul className="space-y-2">
               {[
                 "Perda de urina ao tossir, espirrar ou pular",
@@ -307,8 +304,8 @@ export default function SaudeDaMulherPage() {
                 "Preparação muscular para o parto",
                 "Prisão de ventre crônica",
               ].map((item) => (
-                <li key={item} className="flex items-start gap-2 text-gray-700 text-sm">
-                  <CheckCircle className="w-4 h-4 text-pink-500 mt-0.5 flex-shrink-0" />
+                <li key={item} className="flex items-start gap-2 text-brand-mid text-sm">
+                  <CheckCircle className="w-4 h-4 text-brand-primary mt-0.5 flex-shrink-0" />
                   {item}
                 </li>
               ))}
@@ -318,13 +315,13 @@ export default function SaudeDaMulherPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-slate-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-brand-dark">
               Condições que tratamos
             </h2>
-            <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+            <p className="text-brand-mid mt-3 max-w-2xl mx-auto">
               Nossa equipe especializada atende mulheres em todas as fases da vida, com protocolos
               personalizados para cada condição.
             </p>
@@ -333,19 +330,19 @@ export default function SaudeDaMulherPage() {
             {benefits.map((b) => (
               <div
                 key={b.title}
-                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-pink-100"
+                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-slate-100"
               >
-                <div className="w-12 h-12 bg-pink-100 text-pink-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-brand-primary-light text-brand-primary rounded-xl flex items-center justify-center mb-4">
                   {b.icon}
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">{b.title}</h3>
-                <p className="text-gray-600 text-sm">{b.text}</p>
+                <h3 className="font-bold text-brand-dark mb-2">{b.title}</h3>
+                <p className="text-brand-mid text-sm">{b.text}</p>
               </div>
             ))}
           </div>
           <div className="text-center mt-10">
             <CtaButton context="Saúde da Mulher"
-              className="inline-flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white font-semibold px-8 py-3.5 rounded-xl transition-all shadow-md">
+              className="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-primary-dark text-white font-semibold px-8 py-3.5 rounded-xl transition-all shadow-md">
               Quero esse tratamento
             </CtaButton>
           </div>
@@ -356,10 +353,10 @@ export default function SaudeDaMulherPage() {
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold font-heading text-gray-900">
+            <h2 className="text-3xl font-bold font-heading text-brand-dark">
               Queixas mais comuns que tratamos
             </h2>
-            <p className="text-gray-600 mt-3">
+            <p className="text-brand-mid mt-3">
               Se você tem algum destes sintomas, a fisioterapia pélvica pode ajudar.
             </p>
           </div>
@@ -367,9 +364,9 @@ export default function SaudeDaMulherPage() {
             {conditions.map((c) => (
               <div
                 key={c}
-                className="flex items-center gap-2 bg-pink-50 rounded-xl px-4 py-3 text-sm text-gray-700"
+                className="flex items-center gap-2 bg-slate-50 rounded-xl px-4 py-3 text-sm text-brand-mid"
               >
-                <CheckCircle className="w-4 h-4 text-pink-500 flex-shrink-0" />
+                <CheckCircle className="w-4 h-4 text-brand-primary flex-shrink-0" />
                 {c}
               </div>
             ))}
@@ -378,41 +375,41 @@ export default function SaudeDaMulherPage() {
       </section>
 
       {/* Mid CTA */}
-      <section className="py-14 bg-gradient-to-r from-pink-600 to-rose-500 text-white text-center">
+      <section className="py-14 bg-brand-primary text-white text-center">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold font-heading mb-4">
             Você não precisa conviver com isso
           </h2>
-          <p className="text-pink-100 mb-8 text-lg">
+          <p className="text-white/80 mb-8 text-lg">
             Incontinência, dor pélvica e disfunções sexuais têm tratamento. Agende sua avaliação
             gratuita e descubra como recuperar sua qualidade de vida.
           </p>
           <CtaButton context="Saúde da Mulher"
-            className="inline-flex items-center gap-2 bg-white text-pink-700 hover:bg-pink-50 font-bold text-lg px-10 py-4 rounded-full shadow-xl transition-all hover:scale-105">
+            className="inline-flex items-center gap-2 bg-white text-brand-primary-dark hover:bg-white/90 font-bold text-lg px-10 py-4 rounded-xl shadow-lg transition-colors">
             Quero minha avaliação gratuita
           </CtaButton>
         </div>
       </section>
 
       {/* Process */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-slate-50">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-brand-dark">
               Como funciona o tratamento
             </h2>
-            <p className="text-gray-600 mt-3">
+            <p className="text-brand-mid mt-3">
               Um processo estruturado, respeitoso e totalmente adaptado às suas necessidades.
             </p>
           </div>
           <div className="grid md:grid-cols-4 gap-6">
             {process.map((p) => (
               <div key={p.step} className="text-center">
-                <div className="w-14 h-14 bg-pink-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold font-heading">
+                <div className="w-14 h-14 bg-brand-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold font-heading">
                   {p.step}
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">{p.title}</h3>
-                <p className="text-gray-600 text-sm">{p.text}</p>
+                <h3 className="font-bold text-brand-dark mb-2">{p.title}</h3>
+                <p className="text-brand-mid text-sm">{p.text}</p>
               </div>
             ))}
           </div>
@@ -423,7 +420,7 @@ export default function SaudeDaMulherPage() {
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold font-heading text-gray-900">
+            <h2 className="text-3xl font-bold font-heading text-brand-dark">
               Fisioterapia em todas as fases da vida feminina
             </h2>
           </div>
@@ -432,32 +429,32 @@ export default function SaudeDaMulherPage() {
               {
                 fase: "Gestação",
                 desc: "Preparação do assoalho pélvico, alívio de dores lombares e pélvicas, orientação para o parto.",
-                cor: "bg-pink-50 border-pink-200",
+                cor: "bg-slate-50 border-slate-200",
                 icon: "🤰",
               },
               {
                 fase: "Pós-Parto",
                 desc: "Recuperação da musculatura, cicatriz de cesárea ou episiotomia, diastase abdominal.",
-                cor: "bg-rose-50 border-rose-200",
+                cor: "bg-slate-50 border-slate-200",
                 icon: "👶",
               },
               {
                 fase: "Fase Reprodutiva",
                 desc: "Incontinência, disfunções sexuais, endometriose, dor pélvica crônica, SOP.",
-                cor: "bg-fuchsia-50 border-fuchsia-200",
+                cor: "bg-slate-50 border-slate-200",
                 icon: "🌸",
               },
               {
                 fase: "Menopausa",
                 desc: "Ressecamento vaginal, incontinência, prolapso, dor pélvica e manutenção da qualidade de vida.",
-                cor: "bg-purple-50 border-purple-200",
+                cor: "bg-slate-50 border-slate-200",
                 icon: "🌷",
               },
             ].map((f) => (
               <div key={f.fase} className={`rounded-2xl p-6 border ${f.cor}`}>
                 <div className="text-3xl mb-3">{f.icon}</div>
-                <h3 className="font-bold text-gray-900 mb-2">{f.fase}</h3>
-                <p className="text-gray-600 text-sm">{f.desc}</p>
+                <h3 className="font-bold text-brand-dark mb-2">{f.fase}</h3>
+                <p className="text-brand-mid text-sm">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -465,10 +462,10 @@ export default function SaudeDaMulherPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-pink-50">
+      <section className="py-16 bg-slate-50">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold font-heading text-gray-900">
+            <h2 className="text-3xl font-bold font-heading text-brand-dark">
               O que nossas pacientes dizem
             </h2>
           </div>
@@ -477,13 +474,13 @@ export default function SaudeDaMulherPage() {
               <div key={t.name} className="bg-white rounded-2xl p-6 shadow-sm">
                 <div className="flex mb-3">
                   {Array.from({ length: t.stars }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                    <Star key={i} className="w-4 h-4 text-brand-star fill-brand-star" />
                   ))}
                 </div>
-                <p className="text-gray-700 italic mb-4 text-sm">"{t.text}"</p>
+                <p className="text-brand-mid italic mb-4 text-sm">"{t.text}"</p>
                 <div>
-                  <div className="font-bold text-gray-900">{t.name}</div>
-                  <div className="text-pink-600 text-xs">{t.condition}</div>
+                  <div className="font-bold text-brand-dark">{t.name}</div>
+                  <div className="text-brand-primary text-xs">{t.condition}</div>
                 </div>
               </div>
             ))}
@@ -493,10 +490,10 @@ export default function SaudeDaMulherPage() {
 
       <ClinicGallery />
 
-      <section className="py-12 bg-pink-50">
+      <section className="py-12 bg-slate-50">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <p className="text-pink-600 font-semibold text-sm uppercase tracking-widest mb-2">Dê o primeiro passo</p>
-          <h2 className="text-2xl md:text-3xl font-bold font-heading text-gray-900 mb-6">
+          <p className="text-brand-primary font-semibold text-sm uppercase tracking-widest mb-2">Dê o primeiro passo</p>
+          <h2 className="text-2xl md:text-3xl font-bold font-heading text-brand-dark mb-6">
             Junte-se a mais de 500 mulheres que recuperaram sua qualidade de vida
           </h2>
           <CtaButton context="Saúde da Mulher"
@@ -510,7 +507,7 @@ export default function SaudeDaMulherPage() {
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold font-heading text-gray-900">
+            <h2 className="text-3xl font-bold font-heading text-brand-dark">
               Perguntas frequentes
             </h2>
           </div>
@@ -519,24 +516,24 @@ export default function SaudeDaMulherPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 bg-gray-900 text-white text-center">
+      <section className="py-16 bg-brand-ink text-white text-center">
         <div className="max-w-3xl mx-auto px-4">
-          <Heart className="w-12 h-12 text-pink-400 mx-auto mb-4" />
+          <Heart className="w-12 h-12 text-brand-primary-light mx-auto mb-4" />
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
             Cuide da sua saúde com quem entende de você
           </h2>
-          <p className="text-gray-300 mb-8 text-lg">
+          <p className="text-slate-300 mb-8 text-lg">
             Sua qualidade de vida importa. Nossa equipe está pronta para te acolher com
             profissionalismo, sigilo e cuidado em todas as fases da sua vida.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CtaButton context="Saúde da Mulher"
-              className="inline-flex items-center justify-center gap-2 bg-pink-600 hover:bg-pink-500 text-white font-bold text-lg px-8 py-4 rounded-full shadow-xl transition-all hover:scale-105">
+              className="inline-flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg transition-colors">
               Agendar pelo WhatsApp
             </CtaButton>
             <Link
               href="/servicos"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-semibold text-lg px-8 py-4 rounded-full transition-all"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-semibold text-lg px-8 py-4 rounded-xl transition-all"
             >
               Ver outros serviços
               <ArrowRight className="w-5 h-5" />

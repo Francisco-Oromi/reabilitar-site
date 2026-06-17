@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, MapPin, Clock } from "lucide-react";
 import { useLeadForm } from "./LeadFormModal";
 
 const services = [
@@ -37,14 +37,18 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 bg-white ${scrolled ? "shadow-md" : ""}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 bg-white ${scrolled ? "shadow-[0_2px_20px_rgba(17,46,42,0.08)]" : "border-b border-slate-100"}`}>
       {/* Top bar */}
-      <div className="bg-brand-primary text-white text-xs py-2 hidden sm:block">
+      <div className="bg-brand-ink text-white/75 text-xs py-2 hidden sm:block">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <span>📍 Rua Batista de Oliveira, 1035 · Granbery · Juiz de Fora - MG</span>
-          <div className="flex items-center gap-4">
-            <span>Seg–Qui: 7h–20h · Sex: 7h–19h · Sáb: 8h–12h</span>
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-white/80 transition-colors font-medium">
+          <span className="flex items-center gap-1.5">
+            <MapPin size={12} className="text-brand-primary-light" /> Rua Batista de Oliveira, 1035 · Granbery · Juiz de Fora - MG
+          </span>
+          <div className="flex items-center gap-5">
+            <span className="flex items-center gap-1.5">
+              <Clock size={12} className="text-brand-primary-light" /> Seg–Qui 7h–20h · Sex 7h–19h · Sáb 8h–12h
+            </span>
+            <a href={WA} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-white hover:text-brand-primary-light transition-colors font-medium">
               <WaIcon /> WhatsApp
             </a>
           </div>
@@ -55,12 +59,12 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <Link href="/">
-            <img src="/images/logo.png" alt="Reabilitar Wellness – Fisioterapia em Juiz de Fora" className="h-12 w-auto" />
+          <Link href="/" aria-label="Reabilitar Wellness — página inicial">
+            <img src="/images/logo.png" alt="Reabilitar Wellness – Fisioterapia em Juiz de Fora" className="h-11 w-auto" />
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-5 text-sm font-medium">
+          <nav className="hidden lg:flex items-center gap-7 text-sm font-medium">
             <Link href="/" className="text-slate-600 hover:text-brand-primary transition-colors">Início</Link>
             <Link href="/empresa" className="text-slate-600 hover:text-brand-primary transition-colors">Quem Somos</Link>
 
@@ -69,11 +73,11 @@ export default function Header() {
                 Serviços <ChevronDown size={13} className={`transition-transform ${servOpen ? "rotate-180" : ""}`} />
               </button>
               {servOpen && (
-                <div className="absolute top-full left-0 w-56 pt-1">
-                  <div className="bg-white shadow-xl rounded-xl py-2 border border-slate-100">
+                <div className="absolute top-full left-0 w-60 pt-2">
+                  <div className="bg-white shadow-xl shadow-slate-200/70 rounded-2xl py-2 border border-slate-100">
                     {services.map((s) => (
                       <Link key={s.href} href={s.href}
-                        className="block px-4 py-2 text-sm text-slate-700 hover:bg-brand-primary-light hover:text-brand-primary transition-colors">
+                        className="block px-4 py-2 text-sm text-slate-600 hover:bg-brand-primary-light hover:text-brand-primary transition-colors">
                         {s.name}
                       </Link>
                     ))}
@@ -90,9 +94,9 @@ export default function Header() {
           {/* CTA desktop */}
           <button
             onClick={() => openLeadForm()}
-            className="hidden lg:flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-semibold px-4 py-2 rounded-lg transition-all text-sm shadow"
+            className="hidden lg:flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-semibold px-5 py-2.5 rounded-xl transition-colors text-sm shadow-sm"
           >
-            <WaIcon /> Agendar Avaliação
+            <WaIcon /> Agendar avaliação
           </button>
 
           {/* Mobile hamburger */}
@@ -123,23 +127,17 @@ export default function Header() {
             {services.map((s) => (
               <Link key={s.href} href={s.href} onClick={() => setOpen(false)}
                 className="block py-2 pl-2 text-sm text-slate-600 hover:text-brand-primary">
-                → {s.name}
+                {s.name}
               </Link>
             ))}
           </div>
 
-          <div className="pt-3 space-y-2">
+          <div className="pt-3">
             <button
               onClick={() => { setOpen(false); openLeadForm(); }}
-              className="flex items-center justify-center gap-2 bg-brand-wa text-white font-bold py-3 rounded-xl w-full text-sm"
+              className="flex items-center justify-center gap-2 bg-brand-wa text-white font-semibold py-3.5 rounded-xl w-full text-sm"
             >
-              <WaIcon /> Agendar Avaliação Gratuita
-            </button>
-            <button
-              onClick={() => { setOpen(false); openLeadForm(); }}
-              className="flex items-center justify-center gap-2 bg-brand-primary text-white font-bold py-3 rounded-xl w-full text-sm"
-            >
-              <WaIcon /> Falar pelo WhatsApp
+              <WaIcon /> Agendar avaliação gratuita
             </button>
           </div>
         </div>

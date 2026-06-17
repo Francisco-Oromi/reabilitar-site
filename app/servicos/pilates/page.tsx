@@ -66,8 +66,9 @@ export default function PilatesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <section className="bg-gradient-to-br from-purple-700 to-purple-900 text-white py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="relative overflow-hidden bg-brand-ink text-white py-16 md:py-20">
+        <div className="absolute inset-0 hero-grain opacity-70" />
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
             <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-1.5 text-sm font-medium mb-6">
@@ -89,7 +90,7 @@ export default function PilatesPage() {
             </div>
             <div className="flex flex-wrap gap-5 text-sm text-white/80">
               {["Avaliação postural gratuita", "Todos os níveis", "Turmas reduzidas"].map((t) => (
-                <span key={t} className="flex items-center gap-1.5"><CheckCircle size={14} className="text-purple-300" /> {t}</span>
+                <span key={t} className="flex items-center gap-1.5"><CheckCircle size={14} className="text-brand-primary-light" /> {t}</span>
               ))}
             </div>
             </div>
@@ -146,7 +147,7 @@ export default function PilatesPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {benefits.map(({ icon: Icon, title, text }) => (
               <div key={title} className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm">
-                <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-4"><Icon size={22} className="text-purple-700" /></div>
+                <div className="w-12 h-12 bg-brand-primary-light rounded-xl flex items-center justify-center mb-4"><Icon size={22} className="text-brand-primary" /></div>
                 <h3 className="font-bold text-brand-dark font-heading mb-2">{title}</h3>
                 <p className="text-brand-mid text-sm leading-relaxed">{text}</p>
               </div>
@@ -168,11 +169,11 @@ export default function PilatesPage() {
           <p className="text-brand-mid text-center mb-10">Escolha a frequência ideal para seu objetivo e rotina.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {plans.map((p) => (
-              <div key={p.freq} className="border-2 border-slate-200 hover:border-purple-500 rounded-2xl p-6 text-center transition-all group">
-                <div className="inline-block bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full mb-3">{p.tag}</div>
+              <div key={p.freq} className="border-2 border-slate-200 hover:border-brand-primary rounded-2xl p-6 text-center transition-all group">
+                <div className="inline-block bg-brand-primary-light text-brand-primary text-xs font-bold px-3 py-1 rounded-full mb-3">{p.tag}</div>
                 <div className="text-xl font-bold text-brand-dark font-heading mb-2">{p.freq}</div>
                 <p className="text-brand-mid text-sm mb-4">{p.desc}</p>
-                <CtaButton context="Pilates" className="text-purple-700 text-sm font-semibold hover:underline" showIcon={false}>Ver preço →</CtaButton>
+                <CtaButton context="Pilates" className="text-brand-primary text-sm font-semibold hover:underline" showIcon={false}>Ver preço →</CtaButton>
               </div>
             ))}
           </div>
@@ -180,7 +181,7 @@ export default function PilatesPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-purple-700 text-white">
+      <section className="py-12 bg-brand-primary text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-bold font-heading mb-3">Experimente o pilates na Reabilitar!</h2>
           <p className="text-white/85 mb-6">Avaliação postural gratuita para novos alunos. Vagas limitadas!</p>
@@ -197,7 +198,7 @@ export default function PilatesPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {process.map((p) => (
               <div key={p.step} className="text-center">
-                <div className="w-14 h-14 bg-purple-700 rounded-2xl flex items-center justify-center text-white text-xl font-bold font-heading mx-auto mb-4">{p.step}</div>
+                <div className="w-14 h-14 bg-brand-primary rounded-2xl flex items-center justify-center text-white text-xl font-bold font-heading mx-auto mb-4">{p.step}</div>
                 <h3 className="font-bold text-brand-dark font-heading mb-2">{p.title}</h3>
                 <p className="text-brand-mid text-sm leading-relaxed">{p.text}</p>
               </div>
@@ -243,7 +244,7 @@ export default function PilatesPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-br from-purple-700 to-purple-900 text-white">
+      <section className="py-16 bg-gradient-to-br from-brand-ink to-brand-ink-light text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">Comece agora sua jornada no pilates</h2>
           <p className="text-white/85 text-lg mb-8">Vagas limitadas. Avaliação gratuita para novos alunos!</p>
@@ -253,7 +254,7 @@ export default function PilatesPage() {
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-white/70">
             <span><MapPin size={13} className="inline mr-1" />Rua Batista de Oliveira, 1035 · JF</span>
-            <span>🕐 Seg–Sex: 7h–20h · Sáb: 8h–12h</span>
+            <span className="flex items-center gap-1"><Clock size={13} /> Seg–Sex 7h–20h · Sáb 8h–12h</span>
           </div>
         </div>
       </section>

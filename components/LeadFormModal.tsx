@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, useCallback } from "react";
-import { X, User, Phone } from "lucide-react";
+import { X, Phone, ShieldCheck } from "lucide-react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { readTracking } from "@/lib/tracking";
@@ -53,7 +53,6 @@ function sendCAPIEvent(payload: CAPIEventPayload) {
 }
 
 async function saveLead(data: {
-  nome: string;
   telefone: string;
   servico: string;
 }) {
@@ -66,6 +65,7 @@ async function saveLead(data: {
 
   const lead = {
     ...data,
+    nome: "",
     status: "novo",
     event_id,
     utm_source: tracking.utm_source,
@@ -126,13 +126,9 @@ async function saveLead(data: {
 }
 
 function LeadModal({ onClose, context }: { onClose: () => void; context: string }) {
-  const [form, setForm] = useState({ nome: "", telefone: "" });
+  const [telefone, setTelefone] = useState("");
   const [sent, setSent] = useState(false);
   const [saving, setSaving] = useState(false);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -140,13 +136,12 @@ function LeadModal({ onClose, context }: { onClose: () => void; context: string 
 
     // Salva lead em background (fire-and-forget) — não bloqueia o fluxo
     saveLead({
-      nome: form.nome,
-      telefone: form.telefone,
+      telefone,
       servico: context || "Geral",
     });
 
     const ctxPart = context ? ` Tenho interesse em: ${context}.` : "";
-    const msg = `Olá! Me chamo ${form.nome}.${ctxPart} Gostaria de agendar uma avaliação gratuita na Reabilitar Wellness!\n\nMeus dados:\n📱 Telefone: ${form.telefone}`;
+    const msg = `Olá! Gostaria de agendar uma avaliação gratuita na Reabilitar Wellness.${ctxPart}\n\nMeu WhatsApp para contato: ${telefone}`;
     window.open(`https://wa.me/${WA_PHONE}?text=${encodeURIComponent(msg)}`, "_blank");
 
     setSaving(false);
@@ -179,11 +174,11 @@ function LeadModal({ onClose, context }: { onClose: () => void; context: string 
             </div>
           </div>
           <h2 className="text-xl font-bold font-heading">
-            {sent ? "Mensagem preparada!" : "Agende sua avaliação gratuita"}
+            {sent ? "Tudo pronto!" : "Agende sua avaliação gratuita"}
           </h2>
           {!sent && (
             <p className="text-white/75 text-sm mt-1">
-              Preencha seus dados e vamos te chamar no WhatsApp
+              Deixe seu WhatsApp e a nossa equipe entra em contato com você.
             </p>
           )}
         </div>
@@ -207,43 +202,33 @@ function LeadModal({ onClose, context }: { onClose: () => void; context: string 
         ) : (
           <form onSubmit={handleSubmit} className="p-6 space-y-4">
             <div>
-              <label className="flex items-center gap-1.5 text-sm font-medium text-slate-700 mb-1.5">
-                <User size={14} /> Nome completo *
+              <label htmlFor="lead-telefone" className="flex items-center gap-1.5 text-sm font-medium text-slate-700 mb-1.5">
+                <Phone size={14} /> Seu número de WhatsApp
               </label>
               <input
-                name="nome"
-                type="text"
-                required
-                value={form.nome}
-                onChange={handleChange}
-                placeholder="Seu nome completo"
-                className="w-full border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent"
-              />
-            </div>
-            <div>
-              <label className="flex items-center gap-1.5 text-sm font-medium text-slate-700 mb-1.5">
-                <Phone size={14} /> Telefone / WhatsApp *
-              </label>
-              <input
+                id="lead-telefone"
                 name="telefone"
                 type="tel"
+                inputMode="tel"
+                autoComplete="tel"
                 required
-                value={form.telefone}
-                onChange={handleChange}
+                autoFocus
+                value={telefone}
+                onChange={(e) => setTelefone(e.target.value)}
                 placeholder="(32) 99999-9999"
-                className="w-full border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent"
+                className="w-full border border-slate-200 rounded-xl px-4 py-3.5 text-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-transparent"
               />
             </div>
             <button
               type="submit"
               disabled={saving}
-              className="w-full flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold py-4 rounded-xl transition-all hover:scale-[1.02] text-base shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold py-4 rounded-xl transition-colors text-base shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
             >
               <WaIcon className="w-5 h-5 fill-white" />
-              {saving ? "Enviando..." : "Enviar pelo WhatsApp"}
+              {saving ? "Abrindo o WhatsApp..." : "Quero agendar pelo WhatsApp"}
             </button>
-            <p className="text-xs text-slate-400 text-center">
-              Seus dados são usados apenas para entrar em contato com você. Sem spam.
+            <p className="flex items-center justify-center gap-1.5 text-xs text-slate-400 text-center">
+              <ShieldCheck size={13} /> Usamos seu número apenas para entrar em contato. Sem spam.
             </p>
           </form>
         )}

@@ -95,11 +95,9 @@ export default function ParaEmpresaPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-slate-800 via-blue-900 to-brand-primary text-white py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 right-20 w-80 h-80 bg-white rounded-full blur-3xl" />
-        </div>
-        <div className="relative max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+      <section className="relative overflow-hidden bg-brand-ink text-white py-20 md:py-28">
+        <div className="absolute inset-0 hero-grain opacity-70" />
+        <div className="relative z-10 max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2 text-sm font-medium mb-6">
               <Briefcase className="w-4 h-4" />
@@ -107,23 +105,23 @@ export default function ParaEmpresaPage() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold font-heading mb-4 leading-tight">
               Saúde corporativa que{" "}
-              <span className="text-blue-300">transforma</span>{" "}
+              <span className="text-brand-primary-light">transforma</span>{" "}
               resultados
             </h1>
-            <p className="text-blue-100 text-lg mb-8">
+            <p className="text-white/80 text-lg mb-8">
               Reduza o absenteísmo, previna LER/DORT e aumente a produtividade com programas
               personalizados de fisioterapia e saúde ocupacional para a sua empresa em Juiz de Fora.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <CtaButton
                 context="Saúde Corporativa"
-                className="inline-flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold text-lg px-8 py-4 rounded-full shadow-xl transition-all hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold text-lg px-8 py-4 rounded-xl shadow-xl transition-all hover:scale-105"
               >
                 Solicitar proposta gratuita
               </CtaButton>
               <CtaButton
                 context="Saúde Corporativa"
-                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/20 font-semibold px-8 py-4 rounded-full transition-all"
+                className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/20 font-semibold px-8 py-4 rounded-xl transition-all"
               >
                 Falar pelo WhatsApp
               </CtaButton>
@@ -132,7 +130,7 @@ export default function ParaEmpresaPage() {
           <div className="grid grid-cols-2 gap-4">
             {benefits.map((b) => (
               <div key={b.label} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20">
-                <div className="text-4xl font-bold font-heading text-blue-300 mb-2">{b.n}</div>
+                <div className="text-4xl font-bold font-heading text-brand-primary-light mb-2">{b.n}</div>
                 <div className="text-white/80 text-sm">{b.label}</div>
               </div>
             ))}
@@ -141,12 +139,12 @@ export default function ParaEmpresaPage() {
       </section>
 
       {/* Problem */}
-      <section className="py-14 bg-red-50 border-b border-red-100">
+      <section className="py-14 bg-slate-50 border-b border-slate-100">
         <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold font-heading text-gray-900 mb-4">
-            Você sabia que doenças musculoesqueléticas são a <span className="text-red-600">2ª maior causa de afastamento</span> no Brasil?
+          <h2 className="text-2xl md:text-3xl font-bold font-heading text-brand-dark mb-4">
+            Você sabia que doenças musculoesqueléticas são a <span className="text-brand-cta">2ª maior causa de afastamento</span> no Brasil?
           </h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">
+          <p className="text-brand-mid max-w-3xl mx-auto">
             LER, DORT, lombalgia e dores cervicais custam às empresas brasileiras bilhões por ano em afastamentos,
             queda de produtividade e aumento do custo de saúde. A boa notícia: grande parte pode ser prevenida.
           </p>
@@ -157,22 +155,22 @@ export default function ParaEmpresaPage() {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-brand-dark">
               Nossos programas corporativos
             </h2>
-            <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+            <p className="text-brand-mid mt-3 max-w-2xl mx-auto">
               Soluções completas e personalizadas para empresas de todos os portes e segmentos.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {programs.map((p) => (
-              <div key={p.title} className="bg-gray-50 rounded-2xl p-6 hover:shadow-md transition-shadow border border-gray-100">
+              <div key={p.title} className="bg-slate-50 rounded-2xl p-6 hover:shadow-md transition-shadow border border-slate-100">
                 <div className="w-12 h-12 bg-brand-primary-light text-brand-primary rounded-xl flex items-center justify-center mb-4">
                   {p.icon}
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2 text-lg">{p.title}</h3>
-                <p className="text-gray-600 text-sm mb-4">{p.desc}</p>
-                <p className="text-brand-primary text-xs font-medium border-t border-gray-200 pt-3">
+                <h3 className="font-bold text-brand-dark mb-2 text-lg">{p.title}</h3>
+                <p className="text-brand-mid text-sm mb-4">{p.desc}</p>
+                <p className="text-brand-primary text-xs font-medium border-t border-slate-200 pt-3">
                   {p.detail}
                 </p>
               </div>
@@ -187,13 +185,13 @@ export default function ParaEmpresaPage() {
           <h2 className="text-3xl font-bold font-heading mb-4">
             Pronto para cuidar da saúde da sua equipe?
           </h2>
-          <p className="text-blue-100 mb-8">
+          <p className="text-white/80 mb-8">
             Solicite uma reunião sem compromisso. Analisamos o perfil da sua empresa e montamos um
             programa sob medida com proposta personalizada.
           </p>
           <CtaButton
             context="Saúde Corporativa"
-            className="inline-flex items-center gap-2 bg-white text-brand-primary hover:bg-blue-50 font-bold text-lg px-10 py-4 rounded-full shadow-xl transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 bg-white text-brand-primary-dark hover:bg-white/90 font-bold text-lg px-10 py-4 rounded-xl shadow-lg transition-colors"
           >
             Solicitar proposta agora
           </CtaButton>
@@ -201,16 +199,16 @@ export default function ParaEmpresaPage() {
       </section>
 
       {/* Segmentos */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-slate-50">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold font-heading text-gray-900">
+            <h2 className="text-3xl font-bold font-heading text-brand-dark">
               Atendemos empresas de todos os segmentos
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {clients.map((c) => (
-              <div key={c} className="flex items-center gap-2 bg-white rounded-xl px-4 py-3 text-sm text-gray-700 shadow-sm">
+              <div key={c} className="flex items-center gap-2 bg-white rounded-xl px-4 py-3 text-sm text-brand-mid shadow-sm">
                 <CheckCircle className="w-4 h-4 text-brand-health flex-shrink-0" />
                 {c}
               </div>
@@ -223,7 +221,7 @@ export default function ParaEmpresaPage() {
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold font-heading text-gray-900">
+            <h2 className="text-3xl font-bold font-heading text-brand-dark">
               Como funciona a parceria
             </h2>
           </div>
@@ -238,8 +236,8 @@ export default function ParaEmpresaPage() {
                 <div className="w-14 h-14 bg-brand-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold font-heading">
                   {p.step}
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">{p.title}</h3>
-                <p className="text-gray-600 text-sm">{p.text}</p>
+                <h3 className="font-bold text-brand-dark mb-2">{p.title}</h3>
+                <p className="text-brand-mid text-sm">{p.text}</p>
               </div>
             ))}
           </div>
@@ -247,26 +245,26 @@ export default function ParaEmpresaPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 bg-gray-900 text-white text-center">
+      <section className="py-16 bg-brand-ink text-white text-center">
         <div className="max-w-3xl mx-auto px-4">
-          <Building2 className="w-12 h-12 text-blue-400 mx-auto mb-4" />
+          <Building2 className="w-12 h-12 text-brand-primary-light mx-auto mb-4" />
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
             Invista na saúde da sua equipe
           </h2>
-          <p className="text-gray-300 mb-8 text-lg">
+          <p className="text-slate-300 mb-8 text-lg">
             Empresas saudáveis são mais produtivas, têm menos afastamentos e retêm mais talentos.
             Fale com nossa equipe e receba uma proposta personalizada.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CtaButton
               context="Saúde Corporativa"
-              className="inline-flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold text-lg px-8 py-4 rounded-full shadow-xl transition-all hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold text-lg px-8 py-4 rounded-xl shadow-xl transition-all hover:scale-105"
             >
               Solicitar proposta
             </CtaButton>
             <Link
               href="/contato"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-semibold text-lg px-8 py-4 rounded-full transition-all"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-semibold text-lg px-8 py-4 rounded-xl transition-all"
             >
               Outros contatos
               <ArrowRight className="w-5 h-5" />

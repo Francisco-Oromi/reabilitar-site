@@ -85,8 +85,9 @@ export default function EmpresaPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-brand-primary via-blue-700 to-blue-900 text-white py-20 md:py-28 text-center">
-        <div className="max-w-4xl mx-auto px-4">
+      <section className="relative overflow-hidden bg-brand-ink text-white py-20 md:py-28 text-center">
+        <div className="absolute inset-0 hero-grain opacity-70" />
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
           <div className="inline-flex items-center gap-2 bg-white/20 rounded-full px-4 py-2 text-sm font-medium mb-6">
             <Award className="w-4 h-4" />
             Referência em fisioterapia em Juiz de Fora desde 2009
@@ -94,7 +95,7 @@ export default function EmpresaPage() {
           <h1 className="text-4xl md:text-5xl font-bold font-heading mb-4">
             Quem somos
           </h1>
-          <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto">
             A Reabilitar nasceu do sonho de transformar vidas por meio da fisioterapia. Ao longo de
             mais de 15 anos, construímos uma equipe de especialistas apaixonados pelo cuidado com o ser humano.
           </p>
@@ -112,7 +113,7 @@ export default function EmpresaPage() {
           ].map((s) => (
             <div key={s.label}>
               <div className="text-3xl font-bold font-heading">{s.n}</div>
-              <div className="text-blue-200 text-sm mt-1">{s.label}</div>
+              <div className="text-white/70 text-sm mt-1">{s.label}</div>
             </div>
           ))}
         </div>
@@ -125,19 +126,19 @@ export default function EmpresaPage() {
             <span className="text-brand-primary font-semibold text-sm uppercase tracking-wider">
               Nossa história
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mt-2 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-brand-dark mt-2 mb-4">
               15 anos cuidando de pessoas
             </h2>
-            <p className="text-gray-600 mb-4">
+            <p className="text-brand-mid mb-4">
               A Reabilitar foi fundada em 2009 com uma missão clara: oferecer fisioterapia de alta
               qualidade de forma acessível e humanizada em Juiz de Fora e região.
             </p>
-            <p className="text-gray-600 mb-4">
+            <p className="text-brand-mid mb-4">
               Começamos pequenos, mas com um compromisso inabalável: tratar cada paciente com o
               cuidado que merece, usando as melhores técnicas disponíveis e sempre focando em
               resultados reais.
             </p>
-            <p className="text-gray-600">
+            <p className="text-brand-mid">
               Hoje, somos uma equipe multidisciplinar com mais de 15 especialistas, 8 áreas de
               atuação e mais de 5.000 pacientes que confiaram na Reabilitar para cuidar da sua saúde.
             </p>
@@ -148,8 +149,8 @@ export default function EmpresaPage() {
                 <div className="flex-shrink-0 w-14 text-center">
                   <span className="text-brand-primary font-bold font-heading">{m.ano}</span>
                 </div>
-                <div className="flex-1 pb-4 border-b border-gray-100">
-                  <p className="text-gray-700 text-sm">{m.fato}</p>
+                <div className="flex-1 pb-4 border-b border-slate-100">
+                  <p className="text-brand-mid text-sm">{m.fato}</p>
                 </div>
               </div>
             ))}
@@ -158,13 +159,13 @@ export default function EmpresaPage() {
       </section>
 
       {/* Missão, Visão, Valores */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-slate-50">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-brand-dark">
               Nossos valores
             </h2>
-            <p className="text-gray-600 mt-3">
+            <p className="text-brand-mid mt-3">
               O que guia cada atendimento, cada decisão e cada relação com nossos pacientes.
             </p>
           </div>
@@ -174,8 +175,8 @@ export default function EmpresaPage() {
                 <div className="w-12 h-12 bg-brand-primary-light text-brand-primary rounded-xl flex items-center justify-center mx-auto mb-4">
                   {v.icon}
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">{v.title}</h3>
-                <p className="text-gray-600 text-sm">{v.text}</p>
+                <h3 className="font-bold text-brand-dark mb-2">{v.title}</h3>
+                <p className="text-brand-mid text-sm">{v.text}</p>
               </div>
             ))}
           </div>
@@ -194,7 +195,7 @@ export default function EmpresaPage() {
               {
                 label: "Propósito",
                 text: "Transformar a vida das pessoas por meio do movimento, reduzindo a dor e devolvendo a liberdade de fazer o que ama.",
-                bg: "bg-gray-800 text-white",
+                bg: "bg-brand-ink text-white",
               },
             ].map((item) => (
               <div key={item.label} className={`rounded-2xl p-6 ${item.bg}`}>
@@ -210,24 +211,24 @@ export default function EmpresaPage() {
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-brand-dark">
               Nossa equipe de especialistas
             </h2>
-            <p className="text-gray-600 mt-3">
+            <p className="text-brand-mid mt-3">
               Profissionais com pós-graduação, certificações reconhecidas e paixão pelo que fazem.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {team.map((t) => (
-              <div key={t.nome} className="bg-gray-50 rounded-2xl p-6 flex gap-4 items-start">
+              <div key={t.nome} className="bg-slate-50 rounded-2xl p-6 flex gap-4 items-start">
                 <div className="w-14 h-14 bg-brand-primary-light rounded-full flex items-center justify-center flex-shrink-0">
                   <Users className="w-7 h-7 text-brand-primary" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900">{t.nome}</h3>
+                  <h3 className="font-bold text-brand-dark">{t.nome}</h3>
                   <p className="text-brand-primary font-medium text-sm">{t.especialidade}</p>
-                  <p className="text-gray-500 text-xs mt-1">{t.pos}</p>
-                  <p className="text-gray-400 text-xs">{t.crefito}</p>
+                  <p className="text-slate-500 text-xs mt-1">{t.pos}</p>
+                  <p className="text-slate-400 text-xs">{t.crefito}</p>
                 </div>
               </div>
             ))}
@@ -242,10 +243,10 @@ export default function EmpresaPage() {
       </section>
 
       {/* Diferenciais */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-slate-50">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold font-heading text-gray-900">
+            <h2 className="text-3xl font-bold font-heading text-brand-dark">
               O que nos diferencia
             </h2>
           </div>
@@ -262,7 +263,7 @@ export default function EmpresaPage() {
             ].map((d) => (
               <div key={d} className="flex items-start gap-3 bg-white rounded-xl p-4">
                 <CheckCircle className="w-5 h-5 text-brand-health flex-shrink-0 mt-0.5" />
-                <p className="text-gray-700 text-sm">{d}</p>
+                <p className="text-brand-mid text-sm">{d}</p>
               </div>
             ))}
           </div>
@@ -270,22 +271,22 @@ export default function EmpresaPage() {
       </section>
 
       {/* CTA Final */}
-      <section className="py-16 bg-gray-900 text-white text-center">
+      <section className="py-16 bg-brand-ink text-white text-center">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold font-heading mb-4">
             Venha conhecer a Reabilitar
           </h2>
-          <p className="text-gray-300 mb-8">
+          <p className="text-slate-300 mb-8">
             Agende uma avaliação gratuita e descubra como podemos ajudar você a recuperar a saúde e
             a qualidade de vida com o cuidado que você merece.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CtaButton className="inline-flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold text-lg px-8 py-4 rounded-full shadow-xl transition-all hover:scale-105">
+            <CtaButton className="inline-flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold text-lg px-8 py-4 rounded-xl shadow-xl transition-all hover:scale-105">
               Agendar pelo WhatsApp
             </CtaButton>
             <Link
               href="/servicos"
-              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-semibold text-lg px-8 py-4 rounded-full transition-all"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white/10 font-semibold text-lg px-8 py-4 rounded-xl transition-all"
             >
               Nossos serviços
               <ArrowRight className="w-5 h-5" />

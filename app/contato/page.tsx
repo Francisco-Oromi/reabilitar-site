@@ -23,14 +23,16 @@ export default function ContatoPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-brand-primary to-brand-primary-dark text-white py-16 md:py-20 text-center">
-        <div className="max-w-3xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold font-heading mb-4">Fale com a gente</h1>
-          <p className="text-white/85 text-lg mb-8">
-            A forma mais rápida de agendar sua avaliação gratuita é pelo WhatsApp — respondemos em minutos!
+      <section className="relative overflow-hidden bg-brand-ink text-white py-16 md:py-24 text-center">
+        <div className="absolute inset-0 hero-grain opacity-70" />
+        <div className="max-w-3xl mx-auto px-4 relative z-10">
+          <h1 className="font-heading text-4xl md:text-5xl font-semibold mb-4">Fale com a gente</h1>
+          <p className="text-white/70 text-lg mb-9 leading-relaxed">
+            O jeito mais rápido de agendar a sua avaliação gratuita é pelo WhatsApp.
+            Deixe seu número e a nossa equipe retorna o contato.
           </p>
-          <CtaButton className="inline-flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-bold px-8 py-4 rounded-xl text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 mx-auto">
-            Agendar avaliação gratuita agora
+          <CtaButton className="inline-flex items-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-semibold px-8 py-4 rounded-xl text-base transition-colors shadow-lg mx-auto">
+            Agendar avaliação gratuita
           </CtaButton>
         </div>
       </section>
