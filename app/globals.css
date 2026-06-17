@@ -9,7 +9,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-display), Georgia, "Times New Roman", serif;
+  --font-heading: var(--font-display), ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme {
@@ -40,12 +40,13 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: -0.015em;
 }
 
-/* Serif display headings read best with slightly tighter leading */
+/* Large display headings tighten up for a confident, modern feel */
 h1, h2 {
-  letter-spacing: -0.018em;
+  letter-spacing: -0.025em;
 }
 
 ::selection {

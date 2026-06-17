@@ -57,7 +57,7 @@ export default function HomePage() {
               </div>
               <h1 className="font-heading text-4xl md:text-5xl lg:text-[3.5rem] font-semibold leading-[1.08] mb-6">
                 Recuperar o movimento{" "}
-                <span className="italic text-brand-primary-light">sem dor</span>{" "}
+                <span className="text-brand-primary-light">sem dor</span>{" "}
                 começa com o cuidado certo.
               </h1>
               <p className="text-lg text-white/70 mb-9 max-w-xl leading-relaxed">
