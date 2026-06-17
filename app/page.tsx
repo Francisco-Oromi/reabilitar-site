@@ -36,17 +36,19 @@ const testimonials = [
   { name: "Ana Lúcia P.",      condition: "Pilates e postura",       text: "Comecei o pilates por causa da dor nas costas e hoje me sinto mais forte e disposta. Fez diferença na minha rotina." },
 ];
 
-const PHONE_TEL = "+553232140522";
-
 export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-brand-ink text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#1a9075] via-[#127a62] to-[#0c5b48] text-white">
         <div className="absolute inset-0 hero-grain opacity-70" />
         <div
-          className="absolute -top-32 right-[-10%] h-[520px] w-[520px] rounded-full opacity-30 blur-[120px]"
-          style={{ background: "radial-gradient(circle, #2f9488 0%, transparent 70%)" }}
+          className="absolute -top-32 right-[-10%] h-[520px] w-[520px] rounded-full opacity-25 blur-[120px]"
+          style={{ background: "radial-gradient(circle, #43bc9f 0%, transparent 70%)" }}
+        />
+        <div
+          className="absolute -bottom-24 left-[-8%] h-[360px] w-[360px] rounded-full opacity-20 blur-[110px]"
+          style={{ background: "radial-gradient(circle, #b696c6 0%, transparent 70%)" }}
         />
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center py-16 md:py-24">
@@ -57,7 +59,7 @@ export default function HomePage() {
               </div>
               <h1 className="font-heading text-4xl md:text-5xl lg:text-[3.5rem] font-semibold leading-[1.08] mb-6">
                 Recuperar o movimento{" "}
-                <span className="text-brand-primary-light">sem dor</span>{" "}
+                <span className="text-brand-lavender">sem dor</span>{" "}
                 começa com o cuidado certo.
               </h1>
               <p className="text-lg text-white/70 mb-9 max-w-xl leading-relaxed">
@@ -69,12 +71,13 @@ export default function HomePage() {
                 <CtaButton className="inline-flex items-center justify-center gap-2 bg-brand-wa hover:bg-brand-wa-dark text-white font-semibold px-7 py-4 rounded-xl text-base transition-colors shadow-lg shadow-emerald-900/30">
                   Agendar avaliação gratuita
                 </CtaButton>
-                <a
-                  href={`tel:${PHONE_TEL}`}
+                <CtaButton
+                  context="Home - telefone"
+                  showIcon={false}
                   className="inline-flex items-center justify-center gap-2 text-white/80 hover:text-white font-medium px-2 py-2 transition-colors"
                 >
                   <Phone size={17} /> (32) 3214-0522
-                </a>
+                </CtaButton>
               </div>
               <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-white/55 border-t border-white/10 pt-6">
                 {["15 anos de clínica", "+5.000 pacientes atendidos", "Equipe pós-graduada"].map((t) => (
@@ -284,7 +287,7 @@ export default function HomePage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-20 md:py-24 bg-brand-primary text-white">
+      <section className="py-20 md:py-24 bg-gradient-to-br from-brand-primary to-brand-purple text-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-semibold mb-4 leading-tight">Comece hoje sua recuperação</h2>
           <p className="text-white/85 text-lg mb-9">Avaliação inicial gratuita, sem compromisso. Conte com uma equipe que cuida de você do diagnóstico à alta.</p>

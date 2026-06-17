@@ -156,7 +156,7 @@ function LeadModal({ onClose, context }: { onClose: () => void; context: string 
       />
       <div className="relative bg-white w-full max-w-md rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-brand-primary to-brand-primary-dark px-6 py-5 text-white">
+        <div className="bg-gradient-to-r from-brand-primary to-brand-purple px-6 py-5 text-white">
           <button
             onClick={onClose}
             className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors"

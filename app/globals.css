@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #16302c;
+  --foreground: #211b2b;
 }
 
 @theme inline {
@@ -13,21 +13,44 @@
 }
 
 @theme {
-  --color-brand-primary: #2f9488;
-  --color-brand-primary-dark: #237569;
-  --color-brand-primary-light: #e7f4f1;
-  --color-brand-ink: #112e2a;
-  --color-brand-ink-light: #1c413b;
-  --color-brand-health: #0f9b6c;
-  --color-brand-health-dark: #0a7350;
-  --color-brand-cta: #e0651a;
-  --color-brand-cta-dark: #c2530e;
+  /* GREEN — from the "Reabilitar" wordmark (exact logo green #43bc9f).
+     brand-primary is a slightly deeper shade of the same hue for legible
+     text/buttons; brand-green is the exact logo green for accents/fills. */
+  --color-brand-primary: #1f9c80;
+  --color-brand-primary-dark: #167a64;
+  --color-brand-primary-light: #e4f6f0;
+  --color-brand-green: #43bc9f;
+
+  /* PURPLE — from the logo icon (exact lavender #b696c6).
+     brand-purple is a deeper, legible shade of the same hue. */
+  --color-brand-purple: #8a5aa6;
+  --color-brand-purple-dark: #6f4589;
+  --color-brand-purple-light: #f1eaf7;
+  --color-brand-lavender: #b696c6;
+
+  /* DARK SECTIONS — deep plum-charcoal derived from the logo purple
+     (replaces the old petroleum green). */
+  --color-brand-ink: #241a30;
+  --color-brand-ink-light: #34263f;
+
+  /* Emphasis accent now uses the brand purple instead of orange */
+  --color-brand-cta: #8a5aa6;
+  --color-brand-cta-dark: #6f4589;
+
+  /* Success / checkmarks stay green, aligned to the logo hue */
+  --color-brand-health: #128a6b;
+  --color-brand-health-dark: #0c6b52;
+
+  /* WhatsApp action green (official brand color) — kept for WA buttons */
   --color-brand-wa: #25d366;
   --color-brand-wa-dark: #1da851;
+
   --color-brand-star: #e3a008;
-  --color-brand-dark: #16302c;
-  --color-brand-mid: #51635d;
-  --color-brand-light: #7c8a85;
+
+  /* Neutral text — faint plum undertone, no green tint */
+  --color-brand-dark: #211b2b;
+  --color-brand-mid: #4f4b59;
+  --color-brand-light: #837e8d;
 }
 
 body {
