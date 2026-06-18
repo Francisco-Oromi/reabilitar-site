@@ -31,6 +31,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { trackMetaEvent } from "@/components/MetaPixel";
+import TrafficTab from "@/components/TrafficTab";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -527,7 +528,7 @@ export default function Dashboard() {
   const [sourceFilter, setSourceFilter] = useState("todos");
   const [dateFrom, setDateFrom] = useState("");
   const [dateTo, setDateTo] = useState("");
-  const [activeTab, setActiveTab] = useState<"leads" | "google-ads" | "kommo">("leads");
+  const [activeTab, setActiveTab] = useState<"leads" | "google-ads" | "kommo" | "trafego">("leads");
   const [syncing, setSyncing] = useState(false);
 
   // Check auth on mount
@@ -731,7 +732,7 @@ NEXT_PUBLIC_FIREBASE_APP_ID=1:123456789:web:abc123`}</pre>
 
         {/* Tabs */}
         <div className="flex gap-1 bg-slate-100 p-1 rounded-xl w-fit">
-          {([["leads","Leads"], ["google-ads","Google Ads"], ["kommo","Kommo"]] as const).map(([tab, label]) => (
+          {([["leads","Leads"], ["google-ads","Google Ads"], ["kommo","Kommo"], ["trafego","Tráfego IA"]] as const).map(([tab, label]) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -836,6 +837,7 @@ NEXT_PUBLIC_FIREBASE_APP_ID=1:123456789:web:abc123`}</pre>
 
         {activeTab === "google-ads" && <GoogleAdsSection leads={leads} />}
         {activeTab === "kommo" && <KommoSection leads={leads} onUpdate={updateLead} />}
+        {activeTab === "trafego" && <TrafficTab />}
       </div>
     </div>
   );
