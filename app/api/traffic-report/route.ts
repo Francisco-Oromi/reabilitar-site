@@ -10,16 +10,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "ANTHROPIC_API_KEY não configurada." }, { status: 500 });
   }
 
-  let body: { files: { name: string; type: string; data: string }[]; period?: string };
+  let body: { files: { name: string; type: string; data: string }[]; period?: string; instructions?: string };
   try {
     body = await req.json();
   } catch {
     return NextResponse.json({ error: "Payload inválido." }, { status: 400 });
   }
 
-  const { files, period } = body;
-  if (!files?.length) {
-    return NextResponse.json({ error: "Nenhum arquivo enviado." }, { status: 400 });
+  const { files, period, instructions } = body;
+  if (!files?.length && !instructions?.trim()) {
+    return NextResponse.json({ error: "Envie ao menos um arquivo ou escreva uma mensagem." }, { status: 400 });
   }
 
   // Build content blocks for Claude
@@ -30,6 +30,7 @@ export async function POST(req: NextRequest) {
     text: `Você é um especialista em análise de tráfego pago e orgânico para clínicas de saúde.
 A clínica é a **Reabilitar Wellness**, clínica de fisioterapia em Juiz de Fora (MG).
 ${period ? `Período dos dados: ${period}` : ""}
+${instructions ? `\nInstruções específicas do usuário: ${instructions}\n\nLeve essas instruções em conta ao estruturar e priorizar o relatório.` : ""}
 
 Analise os arquivos de campanha abaixo (podem ser prints de Google Ads, Meta Ads, planilhas ou relatórios) e gere um relatório estruturado em português do Brasil com as seguintes seções:
 
